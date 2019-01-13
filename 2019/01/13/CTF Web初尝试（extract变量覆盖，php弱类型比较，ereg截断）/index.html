@@ -6,15 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | Wh1te</title>
+  <title>CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断） | Wh1te</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Wh1te">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="#extract变量覆盖题目链接：47.106.142.99:8001进入后可看到如下信息1234567891011121314151617181920 &amp;lt;?php error_reporting(0);include &amp;quot;flag.php&amp;quot;;$filename=__FILE__;$NYSEC=&amp;quot;666&amp;quot;;extract($_GET);if(isset(">
+<meta name="keywords" content="CTF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）">
+<meta property="og:url" content="http://yoursite.com/2019/01/13/CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）/index.html">
 <meta property="og:site_name" content="Wh1te">
+<meta property="og:description" content="#extract变量覆盖题目链接：47.106.142.99:8001进入后可看到如下信息1234567891011121314151617181920 &amp;lt;?php error_reporting(0);include &amp;quot;flag.php&amp;quot;;$filename=__FILE__;$NYSEC=&amp;quot;666&amp;quot;;extract($_GET);if(isset(">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-9576e94c3fe329a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-089a87776a6e2c63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-7612621f1953bd14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-3c53e1b7f493b813.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-3e1e91bac41a3bc9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-e0574dc8381a4b69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-01-13T15:55:39.164Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wh1te">
+<meta name="twitter:title" content="CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）">
+<meta name="twitter:description" content="#extract变量覆盖题目链接：47.106.142.99:8001进入后可看到如下信息1234567891011121314151617181920 &amp;lt;?php error_reporting(0);include &amp;quot;flag.php&amp;quot;;$filename=__FILE__;$NYSEC=&amp;quot;666&amp;quot;;extract($_GET);if(isset(">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/15184404-9576e94c3fe329a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Wh1te" type="application/atom+xml">
   
@@ -156,144 +168,81 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/13/CTF Misic初接触/" class="archive-article-date">
-  	<time datetime="2019-01-13T15:57:07.773Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-13</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/13/CTF Crypto初接触/" class="archive-article-date">
-  	<time datetime="2019-01-13T15:56:11.541Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/13/CTF Crypto初接触/">CTF Crypto初接触</a>
+    <h1 class="article-title" itemprop="name">
+      CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/13/CTF Web初尝试（ezsql，ereg2，买彩票吗）/" class="archive-article-date">
-  	<time datetime="2019-01-13T15:54:24.770Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/13/CTF Web初尝试（ezsql，ereg2，买彩票吗）/">CTF Web初尝试（ezsql，ereg2，买彩票吗）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/13/CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）/" class="archive-article-date">
+        
+        <a href="/2019/01/13/CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）/" class="archive-article-date">
   	<time datetime="2019-01-13T15:52:25.707Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-13</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/13/CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）/">CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#extract变量覆盖<br>题目链接：47.106.142.99:8001<br>进入后可看到如下信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> &lt;?php </span><br><span class="line">error_reporting(0);</span><br><span class="line">include &quot;flag.php&quot;;</span><br><span class="line">$filename=__FILE__;</span><br><span class="line">$NYSEC=&quot;666&quot;;</span><br><span class="line">extract($_GET);</span><br><span class="line">if(isset($NYSEC))</span><br><span class="line">&#123;</span><br><span class="line">    $content=trim(file_get_contents($filename));</span><br><span class="line">    if($NYSEC==$content)</span><br><span class="line">    &#123;</span><br><span class="line">        echo $flag;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        show_source(__FILE__);</span><br><span class="line">        echo &quot;sorry!!&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt; sorry!!</span><br></pre></td></tr></table></figure></p>
+<p>代码大意：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">一个名叫filename的变量为__FILE__</span><br><span class="line">一个名叫NYSEC的变量为&quot;666&quot;</span><br><span class="line">将通过GET传过来的数组转为一个名为数组名，值为数组值的变量(如果新的变量和已有变量重名，会将已有变量替换)</span><br><span class="line">如果存在一个名叫NYSEC的字符串</span><br><span class="line">将filename变量的值赋给名为content变量 </span><br><span class="line">如果变量NYSEC和变量content的值相同</span><br><span class="line">就输出flag的值</span><br><span class="line">否则</span><br><span class="line">对__FILE__文件进行PHP语法高亮显示，语法通过HTML标签进行高亮</span><br><span class="line">输出sorry！！</span><br></pre></td></tr></table></figure></p>
+<p>因为extract()会把符号表中已存在的变量名的值替换掉，所以制造Payload ：?NYSEC=&amp;filename=<br>也就是利用新传入的值为空的filename替换原有的filename的值。构造空等于空，成功输出flag的值<br><img src="https://upload-images.jianshu.io/upload_images/15184404-9576e94c3fe329a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Flag：NYSEC{PHP_is_the_best_language}</p>
+<p>#php弱类型比较<br>题目链接：47.106.142.99:8007<br>进入后可看到如下信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"> &lt;?php</span><br><span class="line">include(&quot;config.php&quot;);</span><br><span class="line">error_reporting(0);</span><br><span class="line"></span><br><span class="line">if (isset($_GET[&apos;NYSEC&apos;]) and isset($_GET[&apos;password&apos;])) &#123;</span><br><span class="line">    echo sha1($_GET[&apos;NYSEC&apos;]).&quot;&lt;/br&gt;&quot;;</span><br><span class="line">    echo sha1($_GET[&apos;password&apos;]).&quot;&lt;/br&gt;&quot;;</span><br><span class="line">      </span><br><span class="line">    if ($_GET[&apos;NYSEC&apos;] == $_GET[&apos;password&apos;])</span><br><span class="line">        echo &apos;&lt;p&gt;Your password can not be your NYSEC!&lt;/p&gt;&apos;;</span><br><span class="line">         </span><br><span class="line">    else if (md5($_GET[&apos;NYSEC&apos;]) == md5($_GET[&apos;password&apos;]))</span><br><span class="line">      die(&apos;Flag: &apos;.$flag);</span><br><span class="line">    else</span><br><span class="line">        echo &apos;&lt;p&gt;Invalid password.&lt;/p&gt;&apos;;</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">    show_source(__FILE__);</span><br><span class="line">    echo &apos;&lt;p&gt;Login first!&lt;/p&gt;&apos;;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">Login first!</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>=== 在进行比较的时候，会先判断两种字符串的类型是否相等，再比较<br>== 在进行比较的时候，会先将字符串类型转化成相同，再比较<br>如果比较一个数字和字符串或者比较涉及到数字内容的字符串，则字符串会被转换成数值并且比较按照数值来进行</p>
+</blockquote>
+<p>乍一看我当时还以为是MD5绕过，，0e在比较的时候会将其视作为科学计数法，所以无论0e后面是什么，0的多少次方还是0。<br>于是乎我进行了错误的尝试Payload：?NYSEC=QNKXDZO&amp;password=240610708<br><img src="https://upload-images.jianshu.io/upload_images/15184404-089a87776a6e2c63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>绕过成功，但是得到了一段加密文字，但是并没有flag<br>在师傅的提示下，我意识到可能可以利用sha1()函数的漏洞进行绕过</p>
+<blockquote>
+<p>sha1() 函数计算字符串的 SHA-1 散列。<br>sha1() 函数使用美国 Secure Hash 算法 1。<br>来自 RFC 3174 的解释 - 美国 Secure Hash 算法 1：SHA-1 产生一个名为报文摘要的 160 位的输出。报文摘要可以被输入到一个可生成或验证报文签名的签名算法。对报文摘要进行签名，而不是对报文进行签名，这样可以提高进程效率，因为报文摘要的大小通常比报文要小很多。数字签名的验证者必须像数字签名的创建者一样，使用相同的散列算法。</p>
+</blockquote>
+<p>由于sha1()函数无法处理数组类型,将会报错并返回NULL，使得else if条件语句成立输出flag<br>构造Payload：?NYSEC[]=margin&amp;password[]</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-7612621f1953bd14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Flag: NYSEC{356a192b7913b04c54574dc28d46e6395428ab}</p>
+<p>#ereg截断<br>题目链接：47.106.142.99:8004<br>进入后看到如下信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> &lt;?php </span><br><span class="line">error_reporting(0);</span><br><span class="line">include &quot;flag.php&quot;;</span><br><span class="line">show_source(__FILE__);</span><br><span class="line">if (isset ($_GET[&apos;password&apos;])) &#123;</span><br><span class="line">     </span><br><span class="line">    if (ereg (&quot;^[a-zA-Z0-9]+$&quot;, $_GET[&apos;password&apos;]) === FALSE)</span><br><span class="line">    &#123;</span><br><span class="line">        echo &apos;&lt;p&gt;You password must be alphanumeric&lt;/p&gt;&apos;;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">      else if (strlen($_GET[&apos;password&apos;]) &lt; 8 &amp;&amp; $_GET[&apos;password&apos;] &gt; 9999999)</span><br><span class="line">    &#123;    </span><br><span class="line">    </span><br><span class="line">        if (strpos ($_GET[&apos;password&apos;], &apos;*-*&apos;) !== FALSE)</span><br><span class="line">        &#123;</span><br><span class="line">            die(&apos;Flag: &apos; . $flag);</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            echo(&apos;&lt;p&gt;*-* have not been found&lt;/p&gt;&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        echo &apos;&lt;p&gt;Invalid password&lt;/p&gt;&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>很显然，从题目和代码可以看出，考查的是ereg截断绕过<br><img src="https://upload-images.jianshu.io/upload_images/15184404-3c53e1b7f493b813.gif?imageMogr2/auto-orient/strip" alt=""></p>
+<p>利用ereg读到%00的时候，就截止了这个漏洞，可以找到flag。<br>即字符串里面包括%00，又因为</p>
+<blockquote>
+<p>else if (strlen($_GET[‘password’]) &lt; 8 &amp;&amp; $_GET[‘password’] &gt; 9999999)<br>{<br>if (strpos ($_GET[‘password’], ‘<em>-</em>‘) !== FALSE)</p>
+</blockquote>
+<p>所以字符串需要长度小于8但要大于9999999且还要有-<br>所以只需在地址栏构造<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/?password=1e8%00*-*</span><br></pre></td></tr></table></figure></p>
+<p>即可得出flag<br><img src="https://upload-images.jianshu.io/upload_images/15184404-3e1e91bac41a3bc9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br> Flag: NYSEC{4496a4721ecb4cdce12b2b73e7a635c4}<br><img src="https://upload-images.jianshu.io/upload_images/15184404-e0574dc8381a4b69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>救救孩子吧，孩子要吃土了<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/hongbao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -305,95 +254,115 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/13/CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/13/CTF Web初尝试（签到题，Cookie）/" class="archive-article-date">
-  	<time datetime="2019-01-13T15:50:08.396Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-13</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/01/13/CTF Web初尝试（ezsql，ereg2，买彩票吗）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          CTF Web初尝试（ezsql，ereg2，买彩票吗）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/01/13/CTF Web初尝试（签到题，Cookie）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CTF Web初尝试（签到题，Cookie）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/13/CTF Web初尝试（签到题，Cookie）/">CTF Web初尝试（签到题，Cookie）</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/13/CTF Web初体验（新人入坑，求大佬放过）/" class="archive-article-date">
-  	<time datetime="2019-01-13T15:44:00.889Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/13/CTF Web初体验（新人入坑，求大佬放过）/">CTF Web初体验（新人入坑，求大佬放过）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -416,8 +385,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
