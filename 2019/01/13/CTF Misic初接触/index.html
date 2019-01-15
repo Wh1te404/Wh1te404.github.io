@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>CTF Misic初接触 | Wh1te</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#图中有图题目：">
+  <meta name="description" content="图中有图题目：">
 <meta name="keywords" content="CTF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CTF Misic初接触">
 <meta property="og:url" content="http://yoursite.com/2019/01/13/CTF Misic初接触/index.html">
 <meta property="og:site_name" content="Wh1te">
-<meta property="og:description" content="#图中有图题目：">
+<meta property="og:description" content="图中有图题目：">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-5ad56b7971b05ac5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-c922ab5dc020a77a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -50,10 +50,10 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-5e19ef2971c65b20.jpg?imageMogr2/auto-orient/strip">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-47dbc5704551b561.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-4b49a0902dc9a5dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-01-15T16:57:38.778Z">
+<meta property="og:updated_time" content="2019-01-15T17:01:03.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CTF Misic初接触">
-<meta name="twitter:description" content="#图中有图题目：">
+<meta name="twitter:description" content="图中有图题目：">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/15184404-5ad56b7971b05ac5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Wh1te" type="application/atom+xml">
@@ -216,7 +216,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#图中有图<br>题目：<a id="more"></a><br><img src="https://upload-images.jianshu.io/upload_images/15184404-5ad56b7971b05ac5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>看题目就可以知道，这个是图片隐写<br>得到图，首先用binwalk进行分析<br><img src="https://upload-images.jianshu.io/upload_images/15184404-c922ab5dc020a77a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>从binwalk中可以看出，图片中夹杂有一张GiF 图片<br>这时我们使用工具010查看原图，通过010查找GIF的16位文件头标志进而分离出隐藏的GIF文件</p>
+        <h1 id="图中有图"><a href="#图中有图" class="headerlink" title="图中有图"></a>图中有图</h1><p>题目：<a id="more"></a><br><img src="https://upload-images.jianshu.io/upload_images/15184404-5ad56b7971b05ac5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>看题目就可以知道，这个是图片隐写<br>得到图，首先用binwalk进行分析<br><img src="https://upload-images.jianshu.io/upload_images/15184404-c922ab5dc020a77a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>从binwalk中可以看出，图片中夹杂有一张GiF 图片<br>这时我们使用工具010查看原图，通过010查找GIF的16位文件头标志进而分离出隐藏的GIF文件</p>
 <blockquote>
 <p>GIF 文件头：47494638　　　　　文件尾：00 3B </p>
 </blockquote>
@@ -224,23 +224,20 @@
 <blockquote>
 <p>flag{Jp3g_And<em>g1f</em>@r3_inTerest1ng}</p>
 </blockquote>
-<p>#用眼睛去听<br><a href="http://ctf.smi1e.top:8020/challenges/uploads/Stegnography/challenges_2a34a2c011b6aa3f5fc33052c9eff89a/flag.zip" target="_blank" rel="noopener">题目:</a><br>下载下来后是一个压缩包，打开后发现只有一个音频文件<br><img src="https://upload-images.jianshu.io/upload_images/15184404-5289f460dd1d0ffa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>解压后得到一个后缀名为wav的文件<br>关于音频文件的隐写题，我们可以使用Audacity打开<br><img src="https://upload-images.jianshu.io/upload_images/15184404-f3f038c8ae035924.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>一般来说音频文件隐写很有可能会在音频波段上做文章（比如说波形，频谱图等）<br>如图波形图看不出来什么，我们换频谱图试试<br><img src="https://upload-images.jianshu.io/upload_images/15184404-20ccabfa2c8cba81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>得到如图，惊现Flag！~~<br><img src="https://upload-images.jianshu.io/upload_images/15184404-9ef330a55db60e81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="用眼睛去听"><a href="#用眼睛去听" class="headerlink" title="用眼睛去听"></a>用眼睛去听</h1><p><a href="http://ctf.smi1e.top:8020/challenges/uploads/Stegnography/challenges_2a34a2c011b6aa3f5fc33052c9eff89a/flag.zip" target="_blank" rel="noopener">题目:</a><br>下载下来后是一个压缩包，打开后发现只有一个音频文件<br><img src="https://upload-images.jianshu.io/upload_images/15184404-5289f460dd1d0ffa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>解压后得到一个后缀名为wav的文件<br>关于音频文件的隐写题，我们可以使用Audacity打开<br><img src="https://upload-images.jianshu.io/upload_images/15184404-f3f038c8ae035924.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>一般来说音频文件隐写很有可能会在音频波段上做文章（比如说波形，频谱图等）<br>如图波形图看不出来什么，我们换频谱图试试<br><img src="https://upload-images.jianshu.io/upload_images/15184404-20ccabfa2c8cba81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>得到如图，惊现Flag！~~<br><img src="https://upload-images.jianshu.io/upload_images/15184404-9ef330a55db60e81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>Flag：</p>
 <blockquote>
 <p>flag:e5353bb7b57578bd4da1c898a8e2d767<br>按要求后得到的答案：NYSEC{e5353bb7b57578bd4da1c898a8e2d767}</p>
 </blockquote>
-<p>#zip伪加密<br><a href="http://ctf.smi1e.top:8020/challenges/uploads/Stegnography/challenges_14adca86189b8ce8bf762822eb0a53ef/zip" target="_blank" rel="noopener">题目：</a><br>下载后文件是一个无后缀名文件<br><img src="https://upload-images.jianshu.io/upload_images/15184404-e12e015005e74936.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>尝试着用txt打开<br><img src="https://upload-images.jianshu.io/upload_images/15184404-a380169358cc5b77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>好像里面有一个jpg文件，试着把文件改成jpg格式打开试试<br><img src="https://upload-images.jianshu.io/upload_images/15184404-451f95218c0458ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>打不开，换成zip格式试试<br><img src="https://upload-images.jianshu.io/upload_images/15184404-768c79509a3fef6c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>可以打开，真的含有图片，试着解压出来，结果发现需要密码<br><img src="https://upload-images.jianshu.io/upload_images/15184404-761c8da03a030386.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/15184404-e019e4cdc2ed6c9d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>##zip伪加密</p>
-<p>###原理</p>
-<blockquote>
+<h1 id="zip伪加密"><a href="#zip伪加密" class="headerlink" title="zip伪加密"></a>zip伪加密</h1><p><a href="http://ctf.smi1e.top:8020/challenges/uploads/Stegnography/challenges_14adca86189b8ce8bf762822eb0a53ef/zip" target="_blank" rel="noopener">题目：</a><br>下载后文件是一个无后缀名文件<br><img src="https://upload-images.jianshu.io/upload_images/15184404-e12e015005e74936.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>尝试着用txt打开<br><img src="https://upload-images.jianshu.io/upload_images/15184404-a380169358cc5b77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>好像里面有一个jpg文件，试着把文件改成jpg格式打开试试<br><img src="https://upload-images.jianshu.io/upload_images/15184404-451f95218c0458ac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>打不开，换成zip格式试试<br><img src="https://upload-images.jianshu.io/upload_images/15184404-768c79509a3fef6c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>可以打开，真的含有图片，试着解压出来，结果发现需要密码<br><img src="https://upload-images.jianshu.io/upload_images/15184404-761c8da03a030386.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/15184404-e019e4cdc2ed6c9d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h2 id="zip伪加密-1"><a href="#zip伪加密-1" class="headerlink" title="zip伪加密"></a>zip伪加密</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><blockquote>
 <p>zip伪加密是在文件头的加密标志位做修改，进而再打开文件时识被别为加密压缩包</p>
 </blockquote>
-<p>###补充知识<br>zip文件头协议，建议去官网（<a href="http://www.pkware.com/）查看" target="_blank" rel="noopener">http://www.pkware.com/）查看</a><br>本次引用的是中文解释</p>
+<h3 id="补充知识"><a href="#补充知识" class="headerlink" title="补充知识"></a>补充知识</h3><p>zip文件头协议，建议去官网（<a href="http://www.pkware.com/）查看" target="_blank" rel="noopener">http://www.pkware.com/）查看</a><br>本次引用的是中文解释</p>
 <blockquote>
 <p>一个 ZIP 文件由三个部分组成：<br>        压缩源文件数据区+压缩源文件目录区+压缩源文件目录结束标志<br><a href="https://blog.csdn.net/wclxyn/article/details/7288994" target="_blank" rel="noopener">详情信息</a><br>这是三个头标记，主要看第二个<br>压缩源文件数据区：50 4B 03 04：这是头文件标记<br>压缩源文件目录区：<br>50 4B 01 02：目录中文件文件头标记<br>3F 00：压缩使用的 pkware 版本<br>14 00：解压文件所需 pkware 版本<br>00 00：全局方式位标记（有无加密，这个更改这里进行伪加密，改为09 00打开就会提示有密码了）<br>压缩源文件目录结束标志 ：50 4B 05 06：目录结束标记<br>我们用winhex打开压缩包，搜索504B，点击第二个504B（压缩源文件目录区）<br>引用资料(<a href="https://blog.csdn.net/pdsu161530247/article/details/73612910" target="_blank" rel="noopener">https://blog.csdn.net/pdsu161530247/article/details/73612910</a>)</p>
 </blockquote>
-<p>###辨识加密</p>
-<h4 id="无加密"><a href="#无加密" class="headerlink" title="无加密"></a>无加密</h4><p>压缩源文件数据区的全局加密应当为<code>00 00</code><br>且压缩源文件目录区的全局方式位标记应当为<code>00 00</code></p>
+<h3 id="辨识加密"><a href="#辨识加密" class="headerlink" title="辨识加密"></a>辨识加密</h3><h4 id="无加密"><a href="#无加密" class="headerlink" title="无加密"></a>无加密</h4><p>压缩源文件数据区的全局加密应当为<code>00 00</code><br>且压缩源文件目录区的全局方式位标记应当为<code>00 00</code></p>
 <h4 id="假加密"><a href="#假加密" class="headerlink" title="假加密"></a>假加密</h4><p>压缩源文件数据区的全局加密应当为<code>00 00</code><br>且压缩源文件目录区的全局方式位标记应当为<code>09 00</code></p>
 <h4 id="真加密"><a href="#真加密" class="headerlink" title="真加密"></a>真加密</h4><p>压缩源文件数据区的全局加密应当为<code>09 00</code><br>且压缩源文件目录区的全局方式位标记应当为<code>09 00</code></p>
 <p>上010</p>
@@ -250,9 +247,9 @@
 <blockquote>
 <p>flag{Zip_1s_Bor1ng}</p>
 </blockquote>
-<p>###血小板天下第一<br><a href="http://ctf.smi1e.top:8020/challenges/uploads/Stegnography/challenges_7683cda8ef0083d0cec1ca48d5a3ee6e/1.zip" target="_blank" rel="noopener">题目链接:</a><br>下载下来一个压缩文件，不过这次的压缩文件没有设置密码<br><img src="https://upload-images.jianshu.io/upload_images/15184404-3c27a52184d7e7cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>包里有两张图片，压缩后查看图片，发现有一张是残缺的二维码图片<br><img src="https://upload-images.jianshu.io/upload_images/15184404-62fa44aaab7543ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="血小板天下第一"><a href="#血小板天下第一" class="headerlink" title="血小板天下第一"></a>血小板天下第一</h3><p><a href="http://ctf.smi1e.top:8020/challenges/uploads/Stegnography/challenges_7683cda8ef0083d0cec1ca48d5a3ee6e/1.zip" target="_blank" rel="noopener">题目链接:</a><br>下载下来一个压缩文件，不过这次的压缩文件没有设置密码<br><img src="https://upload-images.jianshu.io/upload_images/15184404-3c27a52184d7e7cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>包里有两张图片，压缩后查看图片，发现有一张是残缺的二维码图片<br><img src="https://upload-images.jianshu.io/upload_images/15184404-62fa44aaab7543ef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>我们先尝试把二维码补全。没有必要使用PS，使用系统自带的画图工具就可以了<br><img src="https://upload-images.jianshu.io/upload_images/15184404-da2362018543c6d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/15184404-205fa6f4b33a785d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>####注意<br>可能在粘贴过程中粘贴了两次却只看到粘贴出来了一个，<br>这有可能是两个粘贴出来的图片重叠到一起，直接手动拖出来就可以<br><img src="https://upload-images.jianshu.io/upload_images/15184404-67247a378365420f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>补全后扫描二维码得到如下信息</p>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>可能在粘贴过程中粘贴了两次却只看到粘贴出来了一个，<br>这有可能是两个粘贴出来的图片重叠到一起，直接手动拖出来就可以<br><img src="https://upload-images.jianshu.io/upload_images/15184404-67247a378365420f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>补全后扫描二维码得到如下信息</p>
 <blockquote>
 <p>a2V5JTNBJTIwTHNiXzFzX2dyM2F0</p>
 </blockquote>
