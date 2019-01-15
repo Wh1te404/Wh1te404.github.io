@@ -161,9 +161,26 @@
     <article id="post-CTF Misic初接触" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/13/CTF Misic初接触/">CTF Misic初接触</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/13/CTF Misic初接触/" class="archive-article-date">
+  	<time datetime="2019-01-13T15:57:07.773Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-13</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#图中有图<br>题目：<br><img src="https://upload-images.jianshu.io/upload_images/15184404-5ad56b7971b05ac5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>看题目就可以知道，这个是图片隐写<br>得到图，首先用binwalk进行分析</p>
+        <p>#图中有图<br>题目：</p>
+        
+          <a class="article-more-a" href="/2019/01/13/CTF Misic初接触/#more">more >></a>
         
       
 
@@ -239,6 +256,8 @@
       
         <p>#写在最前面<br>密码学wiki：<a href="https://ctf-wiki.github.io/ctf-wiki/crypto/introduction/" target="_blank" rel="noopener">https://ctf-wiki.github.io/ctf-wiki/crypto/introduction/</a><br>Crypto入门：<a href="https://blog.csdn.net/pdsu161530247/article/details/75667218" target="_blank" rel="noopener">https://blog.csdn.net/pdsu161530247/article/details/75667218</a></p>
         
+          <a class="article-more-a" href="/2019/01/13/CTF Crypto初接触/#more">more >></a>
+        
       
 
       
@@ -313,6 +332,8 @@
       
         <p>#ezsql<br><a href="http://47.106.142.99:8006/" target="_blank" rel="noopener">题目链接：</a><br><img src="https://upload-images.jianshu.io/upload_images/15184404-7ac9e06664d96150.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
         
+          <a class="article-more-a" href="/2019/01/13/CTF Web初尝试（ezsql，ereg2，买彩票吗）/#more">more >></a>
+        
       
 
       
@@ -386,6 +407,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>#extract变量覆盖<br>题目链接：47.106.142.99:8001<br>进入后可看到如下信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> &lt;?php </span><br><span class="line">error_reporting(0);</span><br><span class="line">include &quot;flag.php&quot;;</span><br><span class="line">$filename=__FILE__;</span><br><span class="line">$NYSEC=&quot;666&quot;;</span><br><span class="line">extract($_GET);</span><br><span class="line">if(isset($NYSEC))</span><br><span class="line">&#123;</span><br><span class="line">    $content=trim(file_get_contents($filename));</span><br><span class="line">    if($NYSEC==$content)</span><br><span class="line">    &#123;</span><br><span class="line">        echo $flag;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        show_source(__FILE__);</span><br><span class="line">        echo &quot;sorry!!&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt; sorry!!</span><br></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2019/01/13/CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）/#more">more >></a>
         
       
 
@@ -462,6 +485,8 @@
         <p>#做完第一道题之后，lxl大佬又更新了一批题目。这么多题先做啥比较好呢？当然是签到题啦！</p>
 <p>###签到题<br><a href="http://teamxlc.sinaapp.com/web1/02298884f0724c04293b4d8c0178615e/index.php" target="_blank" rel="noopener">题目链接：</a><br><img src="https://upload-images.jianshu.io/upload_images/15184404-a3de21f09d793bba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
         
+          <a class="article-more-a" href="/2019/01/13/CTF Web初尝试（签到题，Cookie）/#more">more >></a>
+        
       
 
       
@@ -535,6 +560,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>#flag在这里<br><a href="http://47.106.142.99:8005" target="_blank" rel="noopener">题目链接：</a><br><img src="http://upload-images.jianshu.io/upload_images/15184404-982ef72f13a86229?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+        
+          <a class="article-more-a" href="/2019/01/13/CTF Web初体验（新人入坑，求大佬放过）/#more">more >></a>
         
       
 
@@ -746,14 +773,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           
             <li class="search-li">
               <a href="https://blog.csdn.net/w__000000wbt" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>某个沙雕</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
             </li>
           
         </ul>
