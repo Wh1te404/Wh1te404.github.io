@@ -19,7 +19,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-7e218ce12a6b69d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-d63066cf0d75cf11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-c7e2f921f61c400a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-01-22T15:41:01.931Z">
+<meta property="og:updated_time" content="2019-01-22T15:45:51.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sql注入一些常用的东西">
 <meta name="twitter:description" content="常见sql注入函数 version():mysql版本 user():用户名 database():数据库名 @@datadir:读取数据库路径 @@version_compile_os:操作系统版本 concat(str1,str2,…):没有分割符地连接字符串，显示数据（数据合并） group_concat(str1,str2,…):连接一个组的所有字符串，并以逗号分割每一条数据，显示数据 i">
@@ -209,9 +209,10 @@
 <li>hex（） =&gt;字符转换为16进制</li>
 <li>@@basedir MYSQL获取安装路径</li>
 <li>concat_ws(separator,str1,str2)：用分隔符连接两个字段的字符串</li>
-<li>group_concat(concat_ws(seperator,str1,str2))：将多行查询结果以逗号分隔全部输出，每一行的结果可用设置的分隔符作字段的间隔</li>
+<li>group_concat(concat_ws(seperator,str1,str2))：将多行查询结果以逗号分隔全部输出，每一行的结果可用设置的分隔符作字段的间隔<a id="more"></a>
+<h1 id="截取字符串常用函数"><a href="#截取字符串常用函数" class="headerlink" title="截取字符串常用函数"></a>截取字符串常用函数</h1><h5 id="1-mid-函数"><a href="#1-mid-函数" class="headerlink" title="1.mid()函数"></a>1.mid()函数</h5></li>
 </ol>
-<h1 id="截取字符串常用函数"><a href="#截取字符串常用函数" class="headerlink" title="截取字符串常用函数"></a>截取字符串常用函数</h1><h5 id="1-mid-函数"><a href="#1-mid-函数" class="headerlink" title="1.mid()函数"></a>1.mid()函数</h5><ul>
+<ul>
 <li>作用：从一个字符串中截取出指定数量的字符 </li>
 <li>格式：mid(striing,start,length)<br><img src="https://upload-images.jianshu.io/upload_images/15184404-7e218ce12a6b69d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
 <li>Eg：</li>

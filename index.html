@@ -202,33 +202,10 @@
 <li>hex（） =&gt;字符转换为16进制</li>
 <li>@@basedir MYSQL获取安装路径</li>
 <li>concat_ws(separator,str1,str2)：用分隔符连接两个字段的字符串</li>
-<li>group_concat(concat_ws(seperator,str1,str2))：将多行查询结果以逗号分隔全部输出，每一行的结果可用设置的分隔符作字段的间隔</li>
-</ol>
-<h1 id="截取字符串常用函数"><a href="#截取字符串常用函数" class="headerlink" title="截取字符串常用函数"></a>截取字符串常用函数</h1><h5 id="1-mid-函数"><a href="#1-mid-函数" class="headerlink" title="1.mid()函数"></a>1.mid()函数</h5><ul>
-<li>作用：从一个字符串中截取出指定数量的字符 </li>
-<li>格式：mid(striing,start,length)<br><img src="https://upload-images.jianshu.io/upload_images/15184404-7e218ce12a6b69d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-<li>Eg：</li>
-</ul>
-<ol>
-<li>MID(DATABASE(),1,1)&gt;’a’,查看数据库名第一位，MID(DATABASE(),2,1)查看数据库名第二位，依次查看各位字符。</li>
-<li>MID((SELECT table_name FROM INFORMATION_SCHEMA.TABLES WHERE T table_schema=0xxxxxxx LIMIT 0,1),1,1)&gt;’a’此处column_name参数可以为sql语句，可自行构造sql语句进行注入。<h5 id="2-substr-函数"><a href="#2-substr-函数" class="headerlink" title="2.substr()函数"></a>2.substr()函数</h5></li>
-</ol>
-<ul>
-<li>作用：与substring()函数实现的功能一样，均为截取字符串。</li>
-<li><p>格式：<br>string substring(string, start, length)<br>string substr(string, start, length)<br><img src="https://upload-images.jianshu.io/upload_images/15184404-d63066cf0d75cf11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-</li>
-<li><p>Eg：</p>
-</li>
-</ul>
-<ol>
-<li>substr(DATABASE(),1,1)&gt;’a’,查看数据库名第一位，substr(DATABASE(),2,1)查看数据库名第二位，依次查看各位字符。</li>
-<li>substr((SELECT table_name FROM INFORMATION_SCHEMA.TABLES WHERE T table_schema=0xxxxxxx LIMIT 0,1),1,1)&gt;’a’此处string参数可以为sql语句，可自行构造sql语句进行注入。<h5 id="3-Left-函数"><a href="#3-Left-函数" class="headerlink" title="3.Left()函数"></a>3.Left()函数</h5></li>
-</ol>
-<ul>
-<li>作用：得到字符串左部指定个数的字符</li>
-<li>格式：Left ( string, length )<br><img src="https://upload-images.jianshu.io/upload_images/15184404-c7e2f921f61c400a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
-</ul>
-
+<li>group_concat(concat_ws(seperator,str1,str2))：将多行查询结果以逗号分隔全部输出，每一行的结果可用设置的分隔符作字段的间隔</li></ol>
+        
+          <a class="article-more-a" href="/2019/01/22/sql注入一些常用的东西/#more">more >></a>
+        
       
 
       
