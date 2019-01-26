@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Wh1te</title>
+  <title>sql学习笔记 | Wh1te</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Wh1te">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="二次排序注入思路： 黑客通过构造数据的形式，在浏览器或者其他软件中提交HTTP数据报文请求到服务端进行处理，提交的数据报文请求中可能包含了黑客构造的SQL语句或者命令。  服务端应用程序会将黑客提交的数据信息进行存储，通常是保存在数据库中，保存的数据信息的主要作用是为应用程序执行其他功能提供原始输入数据并对客户端请求做出响应。  黑客向服务端发送第二个与第一次不相同的请求数据信息。  服务端接收到">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sql学习笔记">
+<meta property="og:url" content="http://yoursite.com/2019/01/27/sql学习笔记/index.html">
 <meta property="og:site_name" content="Wh1te">
+<meta property="og:description" content="二次排序注入思路： 黑客通过构造数据的形式，在浏览器或者其他软件中提交HTTP数据报文请求到服务端进行处理，提交的数据报文请求中可能包含了黑客构造的SQL语句或者命令。  服务端应用程序会将黑客提交的数据信息进行存储，通常是保存在数据库中，保存的数据信息的主要作用是为应用程序执行其他功能提供原始输入数据并对客户端请求做出响应。  黑客向服务端发送第二个与第一次不相同的请求数据信息。  服务端接收到">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-118b2b89b0e04421.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-01-26T18:11:29.966Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wh1te">
+<meta name="twitter:title" content="sql学习笔记">
+<meta name="twitter:description" content="二次排序注入思路： 黑客通过构造数据的形式，在浏览器或者其他软件中提交HTTP数据报文请求到服务端进行处理，提交的数据报文请求中可能包含了黑客构造的SQL语句或者命令。  服务端应用程序会将黑客提交的数据信息进行存储，通常是保存在数据库中，保存的数据信息的主要作用是为应用程序执行其他功能提供原始输入数据并对客户端请求做出响应。  黑客向服务端发送第二个与第一次不相同的请求数据信息。  服务端接收到">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/15184404-118b2b89b0e04421.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Wh1te" type="application/atom+xml">
   
@@ -164,101 +170,206 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-sql学习笔记" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/13/CTF Web初尝试（签到题，Cookie）/" class="archive-article-date">
-  	<time datetime="2019-01-13T15:50:08.396Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/13/CTF Web初尝试（签到题，Cookie）/">CTF Web初尝试（签到题，Cookie）</a>
+    <h1 class="article-title" itemprop="name">
+      sql学习笔记
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/13/CTF Web初体验（新人入坑，求大佬放过）/" class="archive-article-date">
-  	<time datetime="2019-01-13T15:44:00.889Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-13</time>
+        
+        <a href="/2019/01/27/sql学习笔记/" class="archive-article-date">
+  	<time datetime="2019-01-26T18:10:37.003Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-27</time>
 </a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="二次排序注入思路："><a href="#二次排序注入思路：" class="headerlink" title="二次排序注入思路："></a>二次排序注入思路：</h1><ol>
+<li><p>黑客通过构造数据的形式，在浏览器或者其他软件中提交HTTP数据报文请求到服务端进行处理，提交的数据报文请求中可能包含了黑客构造的SQL语句或者命令。</p>
+</li>
+<li><p>服务端应用程序会将黑客提交的数据信息进行存储，通常是保存在数据库中，保存的数据信息的主要作用是为应用程序执行其他功能提供原始输入数据并对客户端请求做出响应。</p>
+</li>
+<li><p>黑客向服务端发送第二个与第一次不相同的请求数据信息。</p>
+</li>
+<li><p>服务端接收到黑客提交的第二个请求信息后，为了处理该请求，服务端会查询数据库中已经存储的数据信息并处理，从而导致黑客在第一次请求中构造的SQL语句或者命令在服务端环境中执行。</p>
+</li>
+<li><p>服务端返回执行的处理结果数据信息，黑客可以通过返回的结果数据信息判断二次注入漏洞利用是否成功。</p>
+<h1 id="sql注入绕开过滤-lesson25"><a href="#sql注入绕开过滤-lesson25" class="headerlink" title="sql注入绕开过滤(lesson25)"></a>sql注入绕开过滤(lesson25)</h1><p>一般有以下思路</p>
+<h3 id="1-大小写变形-："><a href="#1-大小写变形-：" class="headerlink" title="1. 大小写变形 ："></a>1. 大小写变形 ：</h3><p>如：Or,OR,oR</p>
+<h3 id="2-改变编码："><a href="#2-改变编码：" class="headerlink" title="2. 改变编码："></a>2. 改变编码：</h3><p>如：通过hex，urlencode、url等编码<br>Eg：果or被过滤时，我们可以采用url编码（其相当于把ascii编码的0x给替换成%，比如o的ascii为0x6f，url编码就是%6f），这个时候我们可以试试%6fr，即把o换成url编码，也可以全换，也可以大小写的换，如果没被过滤就成功了，（如果%被过滤了的话…）</p>
+<h5 id="注：这个可以积极的去使用，比如测试时and被注释，使用-amp-amp-替换也失败，这个时候不妨试试-26-26（-amp-的url编码）"><a href="#注：这个可以积极的去使用，比如测试时and被注释，使用-amp-amp-替换也失败，这个时候不妨试试-26-26（-amp-的url编码）" class="headerlink" title="注：这个可以积极的去使用，比如测试时and被注释，使用&amp;&amp;替换也失败，这个时候不妨试试%26%26（&amp;的url编码）"></a>注：这个可以积极的去使用，比如测试时and被注释，使用&amp;&amp;替换也失败，这个时候不妨试试%26%26（&amp;的url编码）</h5></li>
+</ol>
+<h3 id="3-添加注释："><a href="#3-添加注释：" class="headerlink" title="3. 添加注释："></a>3. 添加注释：</h3><p>如：/<em>or</em>/（不止应对字母被注释）<br>Eg：某个过滤器能够过滤的字符如下——“select ”、”from ”、”limit ”等，注意这些字符最后面都有一个空格，这个时候我们就能通过内联注释来绕过这个过滤器，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT/**/username,password/**/FROM/**/users</span><br></pre></td></tr></table></figure></p>
+<h5 id="注：这个注释甚至可以穿插在关键字当中，例如被过滤了or，我们可以把order-by改成o-rder-by，参考的资料上是这么说-滑稽"><a href="#注：这个注释甚至可以穿插在关键字当中，例如被过滤了or，我们可以把order-by改成o-rder-by，参考的资料上是这么说-滑稽" class="headerlink" title="注：这个注释甚至可以穿插在关键字当中，例如被过滤了or，我们可以把order by改成o/**/rder by，参考的资料上是这么说(滑稽"></a>注：这个注释甚至可以穿插在关键字当中，例如被过滤了or，我们可以把order by改成o/**/rder by，参考的资料上是这么说(滑稽</h5><h3 id="4-利用符号"><a href="#4-利用符号" class="headerlink" title="4. 利用符号"></a>4. 利用符号</h3><p>如：and=&amp;&amp;   or=||<br>Eg：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">‘ || updatexml(1,concat(0x7e,(select database()),0x7e),1)--+</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-往字符里面插入被过滤的字符"><a href="#5-往字符里面插入被过滤的字符" class="headerlink" title="5.往字符里面插入被过滤的字符"></a>5.往字符里面插入被过滤的字符</h3><p>如or被过滤了，我们可以往里面加or，即注入：oorr，这个时候里面的or就被删去了，剩下的组成新字符，也就是or，是个很好用的绕过方法，像这种类似的还有很多</p>
+<h2 id="数字被注释（1、2等）"><a href="#数字被注释（1、2等）" class="headerlink" title="数字被注释（1、2等）"></a>数字被注释（1、2等）</h2><h3 id="6-使用浮点数："><a href="#6-使用浮点数：" class="headerlink" title="6.使用浮点数："></a>6.使用浮点数：</h3><p>如：1.0、2.0</p>
+<h2 id="符号被注释（-gt-、-lt-等）"><a href="#符号被注释（-gt-、-lt-等）" class="headerlink" title="符号被注释（&gt;、&lt;等）"></a>符号被注释（&gt;、&lt;等）</h2><h3 id="7-利用函数来替代"><a href="#7-利用函数来替代" class="headerlink" title="7.利用函数来替代"></a>7.利用函数来替代</h3><p>如盲注时经常用到比较，这时候要是比较符号被注释了不能用平常的方法了，所以需要用某些函数如greatest()【greatest(n1,n2,n3,…)函数返回输入参数(n1,n2,n3,…)的最大值】、least()等，比如语句：select <em> from users where id=1 and ascii(substr(database(),0,1))&gt;64就可以替换成select </em> from users where id=1 and greatest(ascii(substr(database(),0,1)),64)=64</p>
+<h5 id="注：当or被注释时，像order-by这种含有相关字符的语句也同样无法使用，这个时候如果改变大小写也无用时，可以使用上述的内联注释-，或者用别的编码形式，如果不行的话，那就只能放弃使用order-by，可以尝试使用group-by语句等"><a href="#注：当or被注释时，像order-by这种含有相关字符的语句也同样无法使用，这个时候如果改变大小写也无用时，可以使用上述的内联注释-，或者用别的编码形式，如果不行的话，那就只能放弃使用order-by，可以尝试使用group-by语句等" class="headerlink" title="注：当or被注释时，像order by这种含有相关字符的语句也同样无法使用，这个时候如果改变大小写也无用时，可以使用上述的内联注释/**/，或者用别的编码形式，如果不行的话，那就只能放弃使用order by，可以尝试使用group by语句等"></a>注：当or被注释时，像order by这种含有相关字符的语句也同样无法使用，这个时候如果改变大小写也无用时，可以使用上述的内联注释/**/，或者用别的编码形式，如果不行的话，那就只能放弃使用order by，可以尝试使用group by语句等</h5><h1 id="宽字节注入"><a href="#宽字节注入" class="headerlink" title="宽字节注入"></a>宽字节注入</h1><h2 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h2><p>1、我们都知道，在防御SQL注入的时候，大多说都是使用的过滤特殊字符，或者使用函数将特殊字符转化为实体，就是说在字符转义，添加‘\’。这里第一条就是有这个机制。<br>2、设置宽字节字符集，这里为GBK字符集，GBK字符集占用两个字节。关键就在于这个设置字符集。通常有很多方法可以设置，例如：</p>
+<ul>
+<li><p>mysql_query,如mysql_query(“SET NAMES ‘gbk’”, $conn)、mysql_query(“setcharacter_set_client = gbk”, $conn)。</p>
+</li>
+<li><p>mysql_set_charset，如mysql_set_charset(“gbk”,$conn)。<br>实现过程：当我们测试的时候，输入“%df‘”，这个时候如果php函数是使用的addslashes()的时候，会在冒号的前面加上’\’。也就变成了%df\’ 。对应的编码是%df%5c’.这时候网站字符集是GBK，MYSQL使用的编码也是GBK的话，就会认为%df\是一个汉“運’”，这样的话，单引号前面的\就不起作用了，从而转义失败，导致报错</p>
+<h2 id="涉及到的一些概念"><a href="#涉及到的一些概念" class="headerlink" title="涉及到的一些概念"></a>涉及到的一些概念</h2><h3 id="字符、字符集与字符序"><a href="#字符、字符集与字符序" class="headerlink" title="字符、字符集与字符序"></a>字符、字符集与字符序</h3><p>字符(character)是组成字符集(character set)的基本单位。对字符赋予一个数值(encoding)来确定这个字符在该字符集中的位置。<br>字符序(collation)指同一字符集内字符间的比较规则。</p>
+<h3 id="UTF8"><a href="#UTF8" class="headerlink" title="UTF8"></a>UTF8</h3><p>由于ASCII表示的字符只有128个，因此网络世界的规范是使用UNICODE编码，但是用ASCII表示的字符使用UNICODE并不高效。因此出现了中间格式字符集，被称为通用转换格式，及UTF(Universal Transformation Format)。</p>
+<h3 id="宽字节"><a href="#宽字节" class="headerlink" title="宽字节"></a>宽字节</h3><p>GB2312、GBK、GB18030、BIG5、Shift_JIS等这些都是常说的宽字节，实际上只有两字节。宽字节带来的安全问题主要是吃ASCII字符(一字节)的现象。</p>
+<h3 id="MYSQL的字符集转换过程"><a href="#MYSQL的字符集转换过程" class="headerlink" title="MYSQL的字符集转换过程"></a>MYSQL的字符集转换过程</h3></li>
+</ul>
+<ol>
+<li>MySQL Server收到请求时将请求数据从character_set_client转换为character_set_connection;</li>
+<li>进行内部操作前将请求数据从character_set_connection转换为内部操作字符集，其确定方法如下：</li>
+</ol>
+<ul>
+<li>使用每个数据字段的CHARACTER SET设定值;</li>
+<li>若上述值不存在，则使用对应数据表的DEFAULT CHARACTER SET设定值(MySQL扩展，非SQL标准);</li>
+<li>若上述值不存在，则使用对应数据库的DEFAULT CHARACTER SET设定值;</li>
+<li>若上述值不存在，则使用character_set_server设定值。<br>将操作结果从内部操作字符集转换为character_set_results。<h5 id="注：宽字节注入发生的位置就是PHP发送请求到MYSQL时字符集使用character-set-client设置值进行了一次编码。"><a href="#注：宽字节注入发生的位置就是PHP发送请求到MYSQL时字符集使用character-set-client设置值进行了一次编码。" class="headerlink" title="注：宽字节注入发生的位置就是PHP发送请求到MYSQL时字符集使用character_set_client设置值进行了一次编码。"></a>注：宽字节注入发生的位置就是PHP发送请求到MYSQL时字符集使用character_set_client设置值进行了一次编码。</h5><h2 id="附："><a href="#附：" class="headerlink" title="附："></a>附：</h2><blockquote>
+<p>宽字节注入详解：<br><a href="https://www.cnblogs.com/lcamry/articles/5625276.html" target="_blank" rel="noopener">https://www.cnblogs.com/lcamry/articles/5625276.html</a><br><a href="https://blog.csdn.net/helloc0de/article/details/76180190" target="_blank" rel="noopener">https://blog.csdn.net/helloc0de/article/details/76180190</a></p>
+</blockquote>
+<h1 id="Stacked-injection–堆叠注入–堆查询注入"><a href="#Stacked-injection–堆叠注入–堆查询注入" class="headerlink" title="Stacked injection–堆叠注入–堆查询注入"></a>Stacked injection–堆叠注入–堆查询注入</h1></li>
+<li>Stacked injections:堆叠注入。从名词的含义就可以看到应该是一堆sql语句（多条）一起执行。而在真实的运用中也是这样的，我们知道在mysql中，主要是命令行中，每一条语句结尾加 ; 表示语句结束。这样我们就想到了是不是可以多句一起使用。这个叫做stacked injection。<h2 id="原理：-1"><a href="#原理：-1" class="headerlink" title="原理："></a>原理：</h2><h6 id="在SQL中，分号（-）是用来表示一条sql语句的结束。试想一下我们在-结束一个sql语句后继续构造下一条语句，会不会一起执行？因此这个想法也就造就了堆叠注入。而union-injection（联合注入）也是将两条语句合并在一起，两者之间有什么区别么？区别就在于union-或者union-all执行的语句类型是有限的，可以用来执行查询语句，而堆叠注入可以执行的是任意的语句。例如以下这个例子。用户输入：1-DELETE-FROM-products服务器端生成的sql语句为：（因未对输入的参数进行过滤）Select-from-products-where-productid-1-DELETE-FROM-products当执行查询后，第一条显示查询信息，第二条则将整个表进行删除。"><a href="#在SQL中，分号（-）是用来表示一条sql语句的结束。试想一下我们在-结束一个sql语句后继续构造下一条语句，会不会一起执行？因此这个想法也就造就了堆叠注入。而union-injection（联合注入）也是将两条语句合并在一起，两者之间有什么区别么？区别就在于union-或者union-all执行的语句类型是有限的，可以用来执行查询语句，而堆叠注入可以执行的是任意的语句。例如以下这个例子。用户输入：1-DELETE-FROM-products服务器端生成的sql语句为：（因未对输入的参数进行过滤）Select-from-products-where-productid-1-DELETE-FROM-products当执行查询后，第一条显示查询信息，第二条则将整个表进行删除。" class="headerlink" title="在SQL中，分号（;）是用来表示一条sql语句的结束。试想一下我们在 ; 结束一个sql语句后继续构造下一条语句，会不会一起执行？因此这个想法也就造就了堆叠注入。而union injection（联合注入）也是将两条语句合并在一起，两者之间有什么区别么？区别就在于union 或者union all执行的语句类型是有限的，可以用来执行查询语句，而堆叠注入可以执行的是任意的语句。例如以下这个例子。用户输入：1; DELETE FROM products服务器端生成的sql语句为：（因未对输入的参数进行过滤）Select * from products where productid=1;DELETE FROM products当执行查询后，第一条显示查询信息，第二条则将整个表进行删除。"></a>在SQL中，分号（;）是用来表示一条sql语句的结束。试想一下我们在 ; 结束一个sql语句后继续构造下一条语句，会不会一起执行？因此这个想法也就造就了堆叠注入。而union injection（联合注入）也是将两条语句合并在一起，两者之间有什么区别么？区别就在于union 或者union all执行的语句类型是有限的，可以用来执行查询语句，而堆叠注入可以执行的是任意的语句。例如以下这个例子。用户输入：1; DELETE FROM products服务器端生成的sql语句为：（因未对输入的参数进行过滤）Select * from products where productid=1;DELETE FROM products当执行查询后，第一条显示查询信息，第二条则将整个表进行删除。</h6><h5 id="Eg："><a href="#Eg：" class="headerlink" title="Eg："></a>Eg：</h5><img src="https://upload-images.jianshu.io/upload_images/15184404-118b2b89b0e04421.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>当执行查询后，第一条显示查询信息，第二条则将整个表进行删除。<h2 id="局限性"><a href="#局限性" class="headerlink" title="局限性"></a>局限性</h2>堆叠注入的局限性在于并不是每一个环境下都可以执行，可能受到API或者数据库引擎不支持的限制，当然了权限不足也可以解释为什么攻击者无法修改数据或者调用一些程序。<h3 id="附：-1"><a href="#附：-1" class="headerlink" title="附："></a>附：</h3><blockquote>
+<p>关于堆叠注入的更多内容：<br><a href="https://www.bbsmax.com/A/kvJ3Eq9Xdg/" target="_blank" rel="noopener">https://www.bbsmax.com/A/kvJ3Eq9Xdg/</a><br><a href="http://www.sqlinjection.net/stacked-queries/" target="_blank" rel="noopener">http://www.sqlinjection.net/stacked-queries/</a> </p>
+</blockquote>
+</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>救救孩子吧，孩子要吃土了<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/hongbao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/13/CTF Web初体验（新人入坑，求大佬放过）/">CTF Web初体验（新人入坑，求大佬放过）</a>
-    </h1>
-  
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/27/sql学习笔记/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/01/27/sqli-labs(lesson23-lesson40)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">sqli-labs学习(lesson23-lesson40)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
   
 
 
@@ -282,8 +393,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
