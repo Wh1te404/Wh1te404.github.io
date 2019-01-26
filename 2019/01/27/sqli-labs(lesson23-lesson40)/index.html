@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-e1a4f500a1e4b2be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-f0e97a59fe091cee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-f01687448ca91e1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-01-26T17:25:13.393Z">
+<meta property="og:updated_time" content="2019-01-26T17:27:29.932Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sqli-labs学习(lesson23-lesson40)">
 <meta name="twitter:description" content="lesson23 源码sql语句123456$reg = &amp;quot;/#/&amp;quot;;$reg1 = &amp;quot;/--/&amp;quot;;$replace = &amp;quot;&amp;quot;;$id = preg_replace($reg, $replace, $id);$id = preg_replace($reg1, $replace, $id);$sql=&amp;quot;SELECT * FROM">
@@ -216,7 +216,7 @@
 <li>源码sql语句<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$reg = &quot;/#/&quot;;</span><br><span class="line">$reg1 = &quot;/--/&quot;;</span><br><span class="line">$replace = &quot;&quot;;</span><br><span class="line">$id = preg_replace($reg, $replace, $id);</span><br><span class="line">$id = preg_replace($reg1, $replace, $id);</span><br><span class="line">$sql=&quot;SELECT * FROM users WHERE id=&apos;$id&apos; LIMIT 0,1&quot;;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>此处在获取id参数时对注释符号#和- -进行了过滤，没办法，只好闭合绕过</p>
+<p>此处在获取id参数时对注释符号#和- -进行了过滤，没办法，只好闭合绕过<br><a id="more"></a></p>
 <blockquote>
 <p>?id=-1’union select 1,@@datadir,’5555</p>
 </blockquote>
@@ -627,10 +627,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-学习</a>
               </li>
              
               <li class="article-tag-list-item">
