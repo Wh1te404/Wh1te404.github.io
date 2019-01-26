@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>sql学习笔记 | Wh1te</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="二次排序注入思路： 黑客通过构造数据的形式，在浏览器或者其他软件中提交HTTP数据报文请求到服务端进行处理，提交的数据报文请求中可能包含了黑客构造的SQL语句或者命令。  服务端应用程序会将黑客提交的数据信息进行存储，通常是保存在数据库中，保存的数据信息的主要作用是为应用程序执行其他功能提供原始输入数据并对客户端请求做出响应。  黑客向服务端发送第二个与第一次不相同的请求数据信息。  服务端接收到">
+  <meta name="description" content="二次排序注入思路： 黑客通过构造数据的形式，在浏览器或者其他软件中提交HTTP数据报文请求到服务端进行处理，提交的数据报文请求中可能包含了黑客构造的SQL语句或者命令。 服务端应用程序会将黑客提交的数据信息进行存储，通常是保存在数据库中，保存的数据信息的主要作用是为应用程序执行其他功能提供原始输入数据并对客户端请求做出响应。 黑客向服务端发送第二个与第一次不相同的请求数据信息。 服务端接收到黑客提">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sql学习笔记">
 <meta property="og:url" content="http://yoursite.com/2019/01/27/sql学习笔记/index.html">
 <meta property="og:site_name" content="Wh1te">
-<meta property="og:description" content="二次排序注入思路： 黑客通过构造数据的形式，在浏览器或者其他软件中提交HTTP数据报文请求到服务端进行处理，提交的数据报文请求中可能包含了黑客构造的SQL语句或者命令。  服务端应用程序会将黑客提交的数据信息进行存储，通常是保存在数据库中，保存的数据信息的主要作用是为应用程序执行其他功能提供原始输入数据并对客户端请求做出响应。  黑客向服务端发送第二个与第一次不相同的请求数据信息。  服务端接收到">
+<meta property="og:description" content="二次排序注入思路： 黑客通过构造数据的形式，在浏览器或者其他软件中提交HTTP数据报文请求到服务端进行处理，提交的数据报文请求中可能包含了黑客构造的SQL语句或者命令。 服务端应用程序会将黑客提交的数据信息进行存储，通常是保存在数据库中，保存的数据信息的主要作用是为应用程序执行其他功能提供原始输入数据并对客户端请求做出响应。 黑客向服务端发送第二个与第一次不相同的请求数据信息。 服务端接收到黑客提">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-118b2b89b0e04421.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-01-26T18:12:38.380Z">
+<meta property="og:updated_time" content="2019-01-26T18:14:21.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sql学习笔记">
-<meta name="twitter:description" content="二次排序注入思路： 黑客通过构造数据的形式，在浏览器或者其他软件中提交HTTP数据报文请求到服务端进行处理，提交的数据报文请求中可能包含了黑客构造的SQL语句或者命令。  服务端应用程序会将黑客提交的数据信息进行存储，通常是保存在数据库中，保存的数据信息的主要作用是为应用程序执行其他功能提供原始输入数据并对客户端请求做出响应。  黑客向服务端发送第二个与第一次不相同的请求数据信息。  服务端接收到">
+<meta name="twitter:description" content="二次排序注入思路： 黑客通过构造数据的形式，在浏览器或者其他软件中提交HTTP数据报文请求到服务端进行处理，提交的数据报文请求中可能包含了黑客构造的SQL语句或者命令。 服务端应用程序会将黑客提交的数据信息进行存储，通常是保存在数据库中，保存的数据信息的主要作用是为应用程序执行其他功能提供原始输入数据并对客户端请求做出响应。 黑客向服务端发送第二个与第一次不相同的请求数据信息。 服务端接收到黑客提">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/15184404-118b2b89b0e04421.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Wh1te" type="application/atom+xml">
@@ -191,19 +191,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="二次排序注入思路："><a href="#二次排序注入思路：" class="headerlink" title="二次排序注入思路："></a>二次排序注入思路：</h1><ol>
-<li><p>黑客通过构造数据的形式，在浏览器或者其他软件中提交HTTP数据报文请求到服务端进行处理，提交的数据报文请求中可能包含了黑客构造的SQL语句或者命令。</p>
-</li>
-<li><p>服务端应用程序会将黑客提交的数据信息进行存储，通常是保存在数据库中，保存的数据信息的主要作用是为应用程序执行其他功能提供原始输入数据并对客户端请求做出响应。</p>
-</li>
-<li><p>黑客向服务端发送第二个与第一次不相同的请求数据信息。</p>
-</li>
-<li><p>服务端接收到黑客提交的第二个请求信息后，为了处理该请求，服务端会查询数据库中已经存储的数据信息并处理，从而导致黑客在第一次请求中构造的SQL语句或者命令在服务端环境中执行。</p>
-</li>
-<li><p>服务端返回执行的处理结果数据信息，黑客可以通过返回的结果数据信息判断二次注入漏洞利用是否成功。<a id="more"></a></p>
-<h1 id="sql注入绕开过滤-lesson25"><a href="#sql注入绕开过滤-lesson25" class="headerlink" title="sql注入绕开过滤(lesson25)"></a>sql注入绕开过滤(lesson25)</h1><p>一般有以下思路</p>
-<h3 id="1-大小写变形-："><a href="#1-大小写变形-：" class="headerlink" title="1. 大小写变形 ："></a>1. 大小写变形 ：</h3><p>如：Or,OR,oR</p>
-<h3 id="2-改变编码："><a href="#2-改变编码：" class="headerlink" title="2. 改变编码："></a>2. 改变编码：</h3><p>如：通过hex，urlencode、url等编码<br>Eg：果or被过滤时，我们可以采用url编码（其相当于把ascii编码的0x给替换成%，比如o的ascii为0x6f，url编码就是%6f），这个时候我们可以试试%6fr，即把o换成url编码，也可以全换，也可以大小写的换，如果没被过滤就成功了，（如果%被过滤了的话…）</p>
-<h5 id="注：这个可以积极的去使用，比如测试时and被注释，使用-amp-amp-替换也失败，这个时候不妨试试-26-26（-amp-的url编码）"><a href="#注：这个可以积极的去使用，比如测试时and被注释，使用-amp-amp-替换也失败，这个时候不妨试试-26-26（-amp-的url编码）" class="headerlink" title="注：这个可以积极的去使用，比如测试时and被注释，使用&amp;&amp;替换也失败，这个时候不妨试试%26%26（&amp;的url编码）"></a>注：这个可以积极的去使用，比如测试时and被注释，使用&amp;&amp;替换也失败，这个时候不妨试试%26%26（&amp;的url编码）</h5></li>
+<li>黑客通过构造数据的形式，在浏览器或者其他软件中提交HTTP数据报文请求到服务端进行处理，提交的数据报文请求中可能包含了黑客构造的SQL语句或者命令。</li>
+<li>服务端应用程序会将黑客提交的数据信息进行存储，通常是保存在数据库中，保存的数据信息的主要作用是为应用程序执行其他功能提供原始输入数据并对客户端请求做出响应。</li>
+<li>黑客向服务端发送第二个与第一次不相同的请求数据信息。</li>
+<li>服务端接收到黑客提交的第二个请求信息后，为了处理该请求，服务端会查询数据库中已经存储的数据信息并处理，从而导致黑客在第一次请求中构造的SQL语句或者命令在服务端环境中执行。</li>
+<li>服务端返回执行的处理结果数据信息，黑客可以通过返回的结果数据信息判断二次注入漏洞利用是否成功。<a id="more"></a><h1 id="sql注入绕开过滤-lesson25"><a href="#sql注入绕开过滤-lesson25" class="headerlink" title="sql注入绕开过滤(lesson25)"></a>sql注入绕开过滤(lesson25)</h1>一般有以下思路<h3 id="1-大小写变形-："><a href="#1-大小写变形-：" class="headerlink" title="1. 大小写变形 ："></a>1. 大小写变形 ：</h3>如：Or,OR,oR<h3 id="2-改变编码："><a href="#2-改变编码：" class="headerlink" title="2. 改变编码："></a>2. 改变编码：</h3>如：通过hex，urlencode、url等编码<br>Eg：果or被过滤时，我们可以采用url编码（其相当于把ascii编码的0x给替换成%，比如o的ascii为0x6f，url编码就是%6f），这个时候我们可以试试%6fr，即把o换成url编码，也可以全换，也可以大小写的换，如果没被过滤就成功了，（如果%被过滤了的话…）<h5 id="注：这个可以积极的去使用，比如测试时and被注释，使用-amp-amp-替换也失败，这个时候不妨试试-26-26（-amp-的url编码）"><a href="#注：这个可以积极的去使用，比如测试时and被注释，使用-amp-amp-替换也失败，这个时候不妨试试-26-26（-amp-的url编码）" class="headerlink" title="注：这个可以积极的去使用，比如测试时and被注释，使用&amp;&amp;替换也失败，这个时候不妨试试%26%26（&amp;的url编码）"></a>注：这个可以积极的去使用，比如测试时and被注释，使用&amp;&amp;替换也失败，这个时候不妨试试%26%26（&amp;的url编码）</h5></li>
 </ol>
 <h3 id="3-添加注释："><a href="#3-添加注释：" class="headerlink" title="3. 添加注释："></a>3. 添加注释：</h3><p>如：/<em>or</em>/（不止应对字母被注释）<br>Eg：某个过滤器能够过滤的字符如下——“select ”、”from ”、”limit ”等，注意这些字符最后面都有一个空格，这个时候我们就能通过内联注释来绕过这个过滤器，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT/**/username,password/**/FROM/**/users</span><br></pre></td></tr></table></figure></p>
 <h5 id="注：这个注释甚至可以穿插在关键字当中，例如被过滤了or，我们可以把order-by改成o-rder-by，参考的资料上是这么说-滑稽"><a href="#注：这个注释甚至可以穿插在关键字当中，例如被过滤了or，我们可以把order-by改成o-rder-by，参考的资料上是这么说-滑稽" class="headerlink" title="注：这个注释甚至可以穿插在关键字当中，例如被过滤了or，我们可以把order by改成o/**/rder by，参考的资料上是这么说(滑稽"></a>注：这个注释甚至可以穿插在关键字当中，例如被过滤了or，我们可以把order by改成o/**/rder by，参考的资料上是这么说(滑稽</h5><h3 id="4-利用符号"><a href="#4-利用符号" class="headerlink" title="4. 利用符号"></a>4. 利用符号</h3><p>如：and=&amp;&amp;   or=||<br>Eg：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">‘ || updatexml(1,concat(0x7e,(select database()),0x7e),1)--+</span><br></pre></td></tr></table></figure></p>
